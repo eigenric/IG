@@ -466,15 +466,27 @@ void DescrVAO::draw( const GLenum mode )
    //     - crear el VAO en la GPU (método 'crearVAO'), el VAO queda activado 
    //    Si el array ya se ha creado:
    //     - activar el VAO (con 'glBindVertexArray')
-   // 
+   //
+
+   if (array == 0)
+      crearVAO();
+   else
+      glBindVertexArray(array);
+
    // 2. Comprobar si la secuencia es indexada o no lo es (si no es indexada 'dvbo_indices' es nulo)
    //    Si la secuencia es indexada
    //     - visualizar con 'glDrawElements'
    //    Si la secuencia no es indexada 
    //     - visualizar con 'glDrawArrays'
    //
+   if (dvbo_indices != nullptr)
+      glDrawElements(mode, idxs_count, idxs_type, dvbo_indices);
+   else
+      glDrawArrays(mode, first, count);
+
    // 3. Desactivar el VAO (activar el VAO 0 con 'glBindVertexArray')
 
+   glBindVertexArray(0);
 
 
    CError();
