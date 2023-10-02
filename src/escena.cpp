@@ -119,6 +119,11 @@ void Escena::visualizarGL( )
    //
    // ...................
 
+   switch(apl->modo_visu) {
+      case ModosVisu::relleno : glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); break;
+      case ModosVisu::lineas : glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); break;
+      case ModosVisu::puntos: glPolygonMode(GL_FRONT_AND_BACK, GL_POINT); break;
+   }
 
    CError();
 
@@ -146,6 +151,8 @@ void Escena::visualizarGL( )
 
    // COMPLETAR: práctica 1: visualizar el objeto actual ('objeto')
 
+   objeto->visualizarGL();
+
 
    // Visualizar las aristas del objeto, si procede (es decir: en modo relleno, con 
    // visualización de aristas activada)
@@ -164,7 +171,9 @@ void Escena::visualizarGL( )
       //      - fijar el modo de polígonos a modo 'lineas'
       // 
       // ...........
-
+      cauce->fijarColor({0, 0, 0, 1});
+      glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+      objeto->visualizarGeomGL();
    }
    
 

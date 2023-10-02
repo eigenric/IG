@@ -167,6 +167,7 @@ class DescrVBOInds
 
    // destruye un VAO (libera memoria dinámica de la aplic. y elimina VAO en la GPU)
    ~DescrVBOInds();
+   friend class DescrVAO;
 
 } ;
 

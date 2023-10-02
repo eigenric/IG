@@ -110,25 +110,61 @@ void MallaInd::visualizarGL( )
    //    - hacer push del color actual del cauce
    //    - fijar el color en el cauce usando el color del objeto (se lee con 'leerColor()')
 
+   if (tieneColor()) {
+      col_ver.push_back(cauce->leerColorActual());
+      cauce->fijarColor(leerColor());
+   }
 
    // COMPLETAR: práctica 1: crear el descriptor de VAO, si no está creado
    //  Si el puntero 'dvao' es nulo, crear el descriptor de VAO
    //   * en primer lugar se crea el descriptor de VAO, con su constructor 
    //     (se le pasa como parámetro la tabla de posiciones y el número de atributos del cauce). 
+  
    //   * se añade el descriptor de VBO con la tabla de índices (la tabla de triángulos),
    //   * finalmente se añaden al VAO los descriptores VBOs con tablas de atributos 
    //     que no estén vacías
    //  Si el VAO ya está creado, (dvao no nulo), no hay que hacer nada.
    //
+   if (dvao == nullptr) {
+      DescrVBOAtribs* p_dvbo_posiciones = new DescrVBOAtribs(ind_atrib_posiciones, vertices);
 
+      dvao = new DescrVAO(numero_atributos_cauce, p_dvbo_posiciones);
+
+      DescrVBOInds* indices_triangulos = new DescrVBOInds(triangulos);
+      dvao->agregar(indices_triangulos);
+
+      if (!col_ver.empty()) {
+         DescrVBOAtribs* colores = new DescrVBOAtribs(ind_atrib_colores, col_ver);
+         dvao->agregar(colores);
+         std::cout << "Hay colores" << std::endl;
+      } 
+      
+      if (!nor_ver.empty()) {
+         DescrVBOAtribs* norm = new DescrVBOAtribs(ind_atrib_normales, nor_ver);
+         dvao->agregar(norm);
+         std::cout << "Hay normales" << std::endl;
+      } 
+      if (!cc_tt_ver.empty()) {
+         DescrVBOAtribs* text = new DescrVBOAtribs(ind_atrib_coord_text, cc_tt_ver);
+         dvao->agregar(text);
+         std::cout << "Hay texturas" << std::endl;
+      } 
+
+      dvao->crearVAO();
+   }
 
    // COMPLETAR: práctica 1: visualizar el VAO usando el método 'draw' de 'DescrVAO'
 
+   dvao->draw(GL_TRIANGLES);
 
    // COMPLETAR: práctica 1: restaurar color anterior del cauce 
    //
    // Si el objeto tiene un color asignado (se comprueba con 'tieneColor')
    //    - hacer 'pop' del color actual del cauce
+   if (tieneColor())
+      cauce->popColor();
+
+
 
 }
 
@@ -151,7 +187,25 @@ void MallaInd::visualizarGeomGL( )
    //    2. Dibujar la malla (únicamente visualizará los triángulos)
    //    3. Volver a activar todos los atributos para los cuales la tabla no esté vacía
    // ....
+   if (!col_ver.empty())
+      dvao->habilitarAtrib(ind_atrib_colores, false);
+   
+   if (!nor_ver.empty())
+      dvao->habilitarAtrib(ind_atrib_normales, false);
 
+   if (!cc_tt_ver.empty())
+      dvao->habilitarAtrib(ind_atrib_coord_text, false);
+
+   dvao->draw(GL_LINE_LOOP);
+
+   if (!col_ver.empty())
+      dvao->habilitarAtrib(ind_atrib_colores, true);
+   
+   if (!nor_ver.empty())
+      dvao->habilitarAtrib(ind_atrib_normales, true);
+
+   if (!cc_tt_ver.empty())
+      dvao->habilitarAtrib(ind_atrib_coord_text, true);
 }
 
 // -----------------------------------------------------------------------------

@@ -130,7 +130,7 @@ void DescrVBOAtribs::crearVBO()
 {
    // comprobar precondiciones
    CError();
-   assert( buffer == 0 );  
+   assert(buffer == 0);  
    comprobar();
 
    // COMPLETAR: práctica 1: crear el VBO de atributos en la GPU
@@ -140,12 +140,11 @@ void DescrVBOAtribs::crearVBO()
    //
    // 1. generar un nuevo identificador o nombre de VBO 
 
-   GLuint nombre_vbo;
-   glGenBuffers(1, &nombre_vbo);
+   glGenBuffers(1, &buffer);
 
    // 2. fija este buffer como buffer 'activo' actualmente en el 'target' GL_ARRAY_BUFFER
 
-   glBindBuffer(GL_ARRAY_BUFFER, nombre_vbo);
+   glBindBuffer(GL_ARRAY_BUFFER, buffer);
 
    // 3. transferir los datos desde la memoria de la aplicación al VBO en GPU
 
@@ -383,9 +382,8 @@ void DescrVAO::crearVAO()
    //
    // 1. Crear el nombre de VAO y activarlo como VAO actual (hacer 'bind')
    
-   GLenum nombre_vao = 0 ;
-   glGenVertexArrays( 1, &nombre_vao );
-   glBindVertexArray( nombre_vao );
+   glGenVertexArrays( 1, &array );
+   glBindVertexArray( array );
 
    // 2. Para cada VBO de atributos adjunto al VAO (puntero en 'dvbo_atributo' no nulo):
    //       Crear el VBO de atributos en la GPU (usar 'crearVBO')  
@@ -396,7 +394,8 @@ void DescrVAO::crearVAO()
    //
 
    for (size_t i = 0; i < dvbo_atributo.size(); ++i) {
-      dvbo_atributo[i]->crearVBO();
+      if (dvbo_atributo[i] != nullptr)
+         dvbo_atributo[i]->crearVBO();
       
       if (!atrib_habilitado[i])
          glDisableVertexAttribArray(i);
@@ -480,15 +479,13 @@ void DescrVAO::draw( const GLenum mode )
    //     - visualizar con 'glDrawArrays'
    //
    if (dvbo_indices != nullptr)
-      glDrawElements(mode, idxs_count, idxs_type, dvbo_indices);
+      glDrawElements(mode, idxs_count, idxs_type, dvbo_indices->indices);
    else
       glDrawArrays(mode, first, count);
 
    // 3. Desactivar el VAO (activar el VAO 0 con 'glBindVertexArray')
 
    glBindVertexArray(0);
-
-
    CError();
 }
 // ------------------------------------------------------------------------------------------------------
