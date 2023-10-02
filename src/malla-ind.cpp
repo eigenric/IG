@@ -111,7 +111,7 @@ void MallaInd::visualizarGL( )
    //    - fijar el color en el cauce usando el color del objeto (se lee con 'leerColor()')
 
    if (tieneColor()) {
-      col_ver.push_back(cauce->leerColorActual());
+      cauce->pushColor();
       cauce->fijarColor(leerColor());
    }
 
@@ -336,7 +336,7 @@ Cubo::Cubo()
 // Clase Tetraedro
 
 Tetraedro::Tetraedro()
-: MallaInd()
+: MallaInd("tetraedo 4 vértices")
 {
 
 
@@ -350,8 +350,10 @@ Tetraedro::Tetraedro()
    triangulos = 
       {
          {0, 1, 2}, {0, 1, 3},
-         {0, 2,3}, {1, 2, 3}
+         {0, 2, 3}, {1, 2, 3}
       };
+   
+   ponerColor({0.0, 51.0, 102.0});
 
 }
 // -----------------------------------------------------------------------------------------------
