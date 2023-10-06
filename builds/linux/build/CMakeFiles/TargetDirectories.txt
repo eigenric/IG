@@ -1,0 +1,4 @@
+/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles/rebuild_cache.dir
+/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles/edit_cache.dir
+/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles/release_exe.dir
+/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles/debug_exe.dir
