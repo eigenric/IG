@@ -136,18 +136,15 @@ void MallaInd::visualizarGL( )
       if (!col_ver.empty()) {
          DescrVBOAtribs* colores = new DescrVBOAtribs(ind_atrib_colores, col_ver);
          dvao->agregar(colores);
-         std::cout << "Hay colores" << std::endl;
       } 
       
       if (!nor_ver.empty()) {
          DescrVBOAtribs* norm = new DescrVBOAtribs(ind_atrib_normales, nor_ver);
          dvao->agregar(norm);
-         std::cout << "Hay normales" << std::endl;
       } 
       if (!cc_tt_ver.empty()) {
          DescrVBOAtribs* text = new DescrVBOAtribs(ind_atrib_coord_text, cc_tt_ver);
          dvao->agregar(text);
-         std::cout << "Hay texturas" << std::endl;
       } 
 
       dvao->crearVAO();
@@ -196,7 +193,7 @@ void MallaInd::visualizarGeomGL( )
    if (!cc_tt_ver.empty())
       dvao->habilitarAtrib(ind_atrib_coord_text, false);
 
-   dvao->draw(GL_LINE_LOOP);
+   dvao->draw(GL_TRIANGLES);
 
    if (!col_ver.empty())
       dvao->habilitarAtrib(ind_atrib_colores, true);
@@ -302,8 +299,8 @@ MallaPLY::MallaPLY( const std::string & nombre_arch )
 // ****************************************************************************
 // Clase 'Cubo
 
-Cubo::Cubo()
-:  MallaInd( "cubo 8 vértices" )
+Cubo::Cubo(const std::string& nombre)
+:  MallaInd()
 {
 
    vertices =
@@ -333,6 +330,35 @@ Cubo::Cubo()
 }
 
 // ****************************************************************************
+// Clase CuboColores
+CuboColores::CuboColores()
+: Cubo("Cubo Colores 8 vértices")
+{
+
+   col_ver = {
+         { 0.0, 0.0, 0.0 }, // 0
+         { 0.0, 0.0, +1.0 }, // 1
+         { 0.0, +1.0, 0.0 }, // 2
+         { 0.0, +1.0, +1.0 }, // 3
+         { +1.0, 0.0, 0.0 }, // 4
+         { +1.0, 0.0, +1.0 }, // 5
+         { +1.0, +1.0, 0.0 }, // 6
+         { +1.0, +1.0, +1.0 }, // 7
+      };
+   triangulos =
+      {  
+         {4,5,6}, {5,6,7}, // X+ (+4)
+         {2,3,6}, {3,6,7}, // Y+ (+2)
+         {1,3,5}, {3,5,7},  // Z+ (+1)
+         {0,1,3}, {0,3,2}, // X-
+         {0,5,1}, {0,4,5}, // Y-
+         {0,6,4}, {0,2,6}, // Z-
+      } ;
+
+}
+
+
+// ****************************************************************************
 // Clase Tetraedro
 
 Tetraedro::Tetraedro()
@@ -341,10 +367,10 @@ Tetraedro::Tetraedro()
 
 
    vertices =
-      {  { -1.0, -1.0, -1.0 }, // 0
-         { -1.0, +1.0, +1.0 }, // 1
-         { +1.0, -1.0, +1.0 }, // 2
-         { +1.0, +1.0, -1.0 }, // 3
+      {  { -0.8, 0.0, -0.25 }, // 0
+         { +0.8, 0.0, -0.25 }, // 1
+         { +0.4, 0.0, +1.5 }, // 2
+         { -0.4, 1.25, 0.0 }, // 3
       } ;
 
    triangulos = 

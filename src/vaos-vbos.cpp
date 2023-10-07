@@ -390,13 +390,13 @@ void DescrVAO::crearVAO()
 
    // 4. Para cada VBO de atributos adjunto al VAO (puntero en 'dvbo_atributo' no nulo):
    //       Si la tabla está deshabilitada en el vector 'atrib_habilitado':
-   //           Deshabilitarla en la GPU con 'glDisableVertexArray'
+   //           Deshabilitarla en la GPU con 'glDisableVertex*AttribArray'
    //
 
    for (size_t i = 0; i < dvbo_atributo.size(); ++i) {
       if (dvbo_atributo[i] != nullptr)
          dvbo_atributo[i]->crearVBO();
-      
+
       if (!atrib_habilitado[i])
          glDisableVertexAttribArray(i);
    }

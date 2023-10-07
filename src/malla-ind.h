@@ -120,7 +120,15 @@ class MallaPLY : public MallaInd
 class Cubo : public MallaInd
 {
    public:
-      Cubo();
+      Cubo( const std::string& nombre_cubo = "Cubo 8 vértices");
+};
+
+// ---------------------------------------------------------------------
+
+class CuboColores : public Cubo
+{
+   public:
+      CuboColores();
 };
 
 // ---------------------------------------------------------------------
