@@ -54,10 +54,37 @@ void MallaRevol::inicializar
    // perfil, según se describe en el guion de prácticas.
    //
    // ............................... 
+   
+   for (size_t i=0; i < num_copias; i++)
+   {
+      float theta = 2.0*M_PI*float(i) / float(num_copias -1);
 
+      for (size_t j=0; j < perfil.size(); j++)
+      {
+         
+         float r = perfil[j].x;
+         float x_rot = r*cos(theta);
+         float y_rot = perfil[j].y;
+         float z_rot = -r*sin(theta);
+         vec3 vert_rot(x_rot, y_rot, z_rot);
 
+         vertices.push_back(vert_rot);
+      }
+   }
 
-
+   for (size_t i=0; i < num_copias-1; i++)
+   {
+      for (size_t j=0; j < perfil.size()-1; j++)
+      {
+         unsigned int m = perfil.size();
+         unsigned int k = i*m+ j; 
+         uvec3 triangulo_1(k, k+m, k+m+1),
+               triangulo_2(k, k+m+1, k+1);
+               
+         triangulos.push_back(triangulo_1);
+         triangulos.push_back(triangulo_2);
+      }
+   }
 
 }
 
@@ -75,6 +102,9 @@ MallaRevolPLY::MallaRevolPLY
    // Leer los vértice del perfil desde un PLY, después llamar a 'inicializar'
    // ...........................
 
+   std::vector<glm::vec3> perfil;
+   LeerVerticesPLY(nombre_arch, perfil);
+   inicializar(perfil, nperfiles);
 
 }
 

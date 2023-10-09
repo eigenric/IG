@@ -108,7 +108,7 @@ void LeerVerticesPLY
    lector.leerCabecera( false ) ;
    lector.leerVertices( vertices ) ;
 
-   //cout << "archivo ply '" << lector.nom_archivo << "' leido (únicamente vértices) : núm. vértices == " << vertices.size() << endl << flush ;
+   cout << "archivo ply '" << lector.nom_archivo << "' leido (únicamente vértices) : núm. vértices == " << vertices.size() << endl << flush ;
 }
 
 //**********************************************************************
