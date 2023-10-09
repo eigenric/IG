@@ -69,7 +69,41 @@ class MallaRevolPLY : public MallaRevol
 
 // --------------------------------------------------------------------- 
 
+class Cilindro: public MallaRevol
+{
+   public:
+   // Constructor: crea el perfil original y llama a inicializar
+   // la base tiene el centro en el origen, el radio y la altura son 1
+   Cilindro
+   (
+      const int num_verts_per, // Número de vértices del perfil (m)
+      const unsigned nperfiles // Número de perfiles
+   ) ;
+};
 
+class Cono: public MallaRevol
+{
+   public:
+   // Constructor: crea el perfil original y llama a inicializar
+   // la base tiene el centro en el origen, el radio altura son 1
+   Cono
+   (
+      const int num_verts_per,
+      const unsigned nperfiles
+   ) ;
+};
+
+class Esfera: public MallaRevol
+{
+   public:
+   // Constructor: crea el perfil original y llama a inicializar
+   // La esfera tiene el centro en el origen, el radio es la unidad
+   Esfera
+   (
+      const int num_verts_per,
+      const unsigned nperfiles
+   ) ;
+};
 
 
 #endif

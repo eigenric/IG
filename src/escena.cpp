@@ -331,7 +331,9 @@ Escena2::Escena2()
 
    objetos.push_back( new MallaPLY("beethoven.ply") );
    objetos.push_back( new MallaPLY("big_dodge.ply") );
-   objetos.push_back( new MallaRevolPLY("peon.ply", 4) );
+   objetos.push_back( new MallaRevolPLY("peon.ply", 17) );
+   objetos.push_back( new Cilindro(10, 50) );
+   
 }
 
 

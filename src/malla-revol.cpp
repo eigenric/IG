@@ -108,6 +108,23 @@ MallaRevolPLY::MallaRevolPLY
 
 }
 
+Cilindro::Cilindro
+(
+   const int num_verts_perf,
+   const unsigned nperfiles
+)
+{
+   ponerNombre( std::string("cilindro por revolución del perfil") );
+   std::vector<glm::vec3> perfil;
+   
+   for (int i=0; i < num_verts_perf; i++)
+   {
+      float k = float(i)/(num_verts_perf-1);
+      perfil.push_back(glm::vec3(1, k, 0));
+   }
 
+   inicializar(perfil, nperfiles);
+
+}
 
 
