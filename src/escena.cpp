@@ -313,8 +313,9 @@ Escena1::Escena1()
    // .......
 
    objetos.push_back( new Tetraedro() );
-
    objetos.push_back( new CuboColores() );
+   objetos.push_back( new EstrellaZ(8) );
+
 }
 
 // -------------------------------------------------------------------------

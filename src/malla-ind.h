@@ -139,5 +139,12 @@ class Tetraedro : public MallaInd
       Tetraedro();
 };
 
+// ---------------------------------------------------------------------
+
+class EstrellaZ : public MallaInd
+{
+   public:
+      EstrellaZ(unsigned int n);
+};
 
 #endif

@@ -335,7 +335,8 @@ CuboColores::CuboColores()
 : Cubo("Cubo Colores 8 vértices")
 {
 
-   col_ver = {
+   col_ver =
+      {
          { 0.0, 0.0, 0.0 }, // 0
          { 0.0, 0.0, +1.0 }, // 1
          { 0.0, +1.0, 0.0 }, // 2
@@ -384,3 +385,37 @@ Tetraedro::Tetraedro()
 }
 // -----------------------------------------------------------------------------------------------
 
+EstrellaZ::EstrellaZ(unsigned int n)
+: MallaInd("estrella en el eje Z de n puntas")
+{
+   // Centro de la estrella de color blanco
+   vertices.push_back({0.5, 0.5, 0});
+   col_ver.push_back({1.0, 1.0, 1.0});
+
+
+   for (int i=0; i < n; i++)
+   {
+      // Vértices de las puntas
+      float alpha = 2.0*float(i)*M_PI / n;
+      glm::vec3 v_punta(0.5 + 0.5*cos(alpha), 0.5+0.5*sin(alpha), 0);
+
+      vertices.push_back(v_punta);
+      col_ver.push_back(v_punta); // RGB a partir de coordenadas
+
+      // Vértices intermedios (Ángulo mitad entre dos puntas)
+      float theta = M_PI * (2*float(i)+1)/ n;
+      glm::vec3 v_inter(0.5 + 0.5/3*cos(theta), 0.5 + 0.5/3*sin(theta), 0);
+
+      vertices.push_back(v_inter);
+      col_ver.push_back(v_inter);
+   }
+
+   
+   for (int i=1; i < 2*n; i++)
+      triangulos.push_back({0, i, i+1});
+
+   // Triangulo con el origen
+   triangulos.push_back({0, 2*n, 1});
+
+
+}
