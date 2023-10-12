@@ -314,7 +314,12 @@ Escena1::Escena1()
 
    objetos.push_back( new Tetraedro() );
    objetos.push_back( new CuboColores() );
+   
+   // Ejercicios Adicionales
    objetos.push_back( new EstrellaZ(8) );
+   objetos.push_back( new EstrellaX(5) );
+   objetos.push_back( new EstrellaY(10) );
+   objetos.push_back( new CasaX() );
 
 }
 

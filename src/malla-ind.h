@@ -147,4 +147,26 @@ class EstrellaZ : public MallaInd
       EstrellaZ(unsigned int n);
 };
 
+// Variantes
+
+class EstrellaX : public MallaInd
+{
+   public:
+      EstrellaX(unsigned int n);
+};
+
+class EstrellaY : public MallaInd
+{
+   public:
+      EstrellaY(unsigned int n);
+};
+
+// ---------------------------------------------------------------------
+
+class CasaX: public MallaInd
+{
+   public:
+      CasaX();
+};
+
 #endif

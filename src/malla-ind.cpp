@@ -32,6 +32,7 @@
 #include "lector-ply.h"
 #include "seleccion.h"   // para 'ColorDesdeIdent' 
 
+using namespace std;
 
 // *****************************************************************************
 // funciones auxiliares
@@ -368,10 +369,10 @@ Tetraedro::Tetraedro()
 
 
    vertices =
-      {  { -0.8, 0.0, -0.25 }, // 0
-         { +0.8, 0.0, -0.25 }, // 1
-         { +0.4, 0.0, +1.5 }, // 2
-         { -0.4, 1.25, 0.0 }, // 3
+      {  { -0.75, 0.0, -0.5 }, // 0
+         { +0.75, 0.0, -0.5 }, // 1
+         { +0.0, 0.0, +0.75 }, // 2
+         {  0.0, 0.75, 0.0 }, // 3
       } ;
 
    triangulos = 
@@ -380,20 +381,20 @@ Tetraedro::Tetraedro()
          {0, 2, 3}, {1, 2, 3}
       };
    
-   ponerColor({0.0, 51.0, 102.0});
+   ponerColor({0.69, 0.055, 0.404});
 
 }
 // -----------------------------------------------------------------------------------------------
 
 EstrellaZ::EstrellaZ(unsigned int n)
-: MallaInd("estrella en el eje Z de n puntas")
+: MallaInd(string("estrella en plano XY de ") + to_string(n) + string(" puntas"))
 {
    // Centro de la estrella de color blanco
    vertices.push_back({0.5, 0.5, 0});
    col_ver.push_back({1.0, 1.0, 1.0});
 
 
-   for (int i=0; i < n; i++)
+   for (unsigned int i=0; i < n; i++)
    {
       // Vértices de las puntas
       float alpha = 2.0*float(i)*M_PI / n;
@@ -411,11 +412,127 @@ EstrellaZ::EstrellaZ(unsigned int n)
    }
 
    
-   for (int i=1; i < 2*n; i++)
+   for (unsigned int i=1; i < 2*n; i++)
       triangulos.push_back({0, i, i+1});
 
    // Triangulo con el origen
    triangulos.push_back({0, 2*n, 1});
 
 
+}
+
+// Variantes
+
+EstrellaX::EstrellaX(unsigned int n)
+: MallaInd(string("estrella en plano YZ de ") + to_string(n) + string(" puntas"))
+{
+   // Centro de la estrella de color blanco
+   vertices.push_back({0, 0.5, 0.5 });
+   col_ver.push_back({1.0, 1.0, 1.0});
+
+
+   for (unsigned int i=0; i < n; i++)
+   {
+      // Vértices de las puntas
+      float alpha = 2.0*float(i)*M_PI / n;
+      glm::vec3 v_punta(0, 0.5 + 0.5*cos(alpha), 0.5+0.5*sin(alpha));
+
+      vertices.push_back(v_punta);
+      col_ver.push_back(v_punta); // RGB a partir de coordenadas
+
+      // Vértices intermedios (Ángulo mitad entre dos puntas)
+      float theta = M_PI * (2*float(i)+1)/ n;
+      glm::vec3 v_inter(0, 0.5 + 0.5/3*cos(theta), 0.5 + 0.5/3*sin(theta));
+
+      vertices.push_back(v_inter);
+      col_ver.push_back(v_inter);
+   }
+
+   
+   for (unsigned int i=1; i < 2*n; i++)
+      triangulos.push_back({0, i, i+1});
+
+   // Triangulo con el origen
+   triangulos.push_back({0, 2*n, 1});
+}
+
+EstrellaY::EstrellaY(unsigned int n)
+: MallaInd(string("estrella en el eje XZ de ") + to_string(n) + string(" puntas"))
+{
+   // Centro de la estrella de color blanco
+   vertices.push_back({0.5, 0, 0.5 });
+   col_ver.push_back({1.0, 1.0, 1.0});
+
+
+   for (unsigned int i=0; i < n; i++)
+   {
+      // Vértices de las puntas
+      float alpha = 2.0*float(i)*M_PI / n;
+      glm::vec3 v_punta(0.5 + 0.5*cos(alpha), 0, 0.5+0.5*sin(alpha));
+
+      vertices.push_back(v_punta);
+      col_ver.push_back(v_punta); // RGB a partir de coordenadas
+
+      // Vértices intermedios (Ángulo mitad entre dos puntas)
+      float theta = M_PI * (2*float(i)+1)/ n;
+      glm::vec3 v_inter(0.5 + 0.5/3*cos(theta), 0, 0.5 + 0.5/3*sin(theta));
+
+      vertices.push_back(v_inter);
+      col_ver.push_back(v_inter);
+   }
+
+   
+   for (unsigned int i=1; i < 2*n; i++)
+      triangulos.push_back({0, i, i+1});
+
+   // Triangulo con el origen
+   triangulos.push_back({0, 2*n, 1});
+}
+
+// -----------------------------------------------------------------------------------------------
+
+CasaX::CasaX()
+: MallaInd("casa de colores con tejado a dos aguas")
+{
+   vertices =
+      {  {  0.0,  0.0,  0.0 }, // 0
+         {  0.0,  0.0, +0.5 }, // 1
+         {  0.0, +0.5,  0.0 }, // 2
+         {  0.0, +0.5, +0.5 }, // 3
+         { +0.8,  0.0,  0.0 }, // 4
+         { +0.8,  0.0, +0.5 }, // 5
+         { +0.8, +0.5,  0.0 }, // 6
+         { +0.8, +0.5, +0.5 }, // 7
+         // Tejado
+         { +0.8, +0.75,  0.25 }, // 8
+         {  0.0, +0.75,  0.25 }  // 9
+      } ;
+      
+   col_ver =
+      {  { 0.0, 0.0, 0.0 }, // 0
+         { 0.0, 0.0, +1.0 }, // 1
+         { 0.0, +1.0, 0.0 }, // 2
+         { 0.0, +1.0, +1.0 }, // 3
+         { +1.0, 0.0, 0.0 }, // 4
+         { +1.0, 0.0, +1.0 }, // 5
+         { +1.0, +1.0, 0.0 }, // 6
+         { +1.0, +1.0, +1.0 }, // 7
+         // Tejado
+         { +1.0, +1.0, 0.0 },
+         {  0.0, +1.0, 0.0 }
+      } ;
+    
+
+   triangulos =
+      {  {0,1,3}, {0,3,2}, // X-
+         {4,7,5}, {4,6,7}, // X+ (+4)
+
+         {0,6,4}, {0,2,6}, // Z-
+         {1,5,7}, {1,7,3},  // Z+ (+1)
+
+         // Tejado
+         {3,7,8}, {3,8,9},
+         {6,7,8}, {2,3,9},
+         {2,6,8}, {2,8,9}
+      } ;
 }
