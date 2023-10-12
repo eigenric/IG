@@ -116,7 +116,7 @@ Cilindro::Cilindro
 {
    ponerNombre( std::string("cilindro por revolución del perfil") );
    std::vector<glm::vec3> perfil;
-   
+
    for (int i=0; i < num_verts_perf; i++)
    {
       float k = float(i)/(num_verts_perf-1);
@@ -128,3 +128,47 @@ Cilindro::Cilindro
 }
 
 
+Cono::Cono
+(
+   const int num_verts_perf,
+   const unsigned nperfiles
+)
+{
+   ponerNombre( std::string("cono por revolución del perfil") );
+   std::vector<glm::vec3> perfil;
+   
+   for (int i=0; i < num_verts_perf; i++)
+   {
+      float k = float(i)/(num_verts_perf-1);
+      perfil.push_back(glm::vec3(k, 1-k, 0));
+   }
+
+   inicializar(perfil, nperfiles);
+}
+
+Esfera::Esfera
+(
+   const int num_verts_perf,
+   const unsigned nperfiles
+)
+{
+   ponerNombre( std::string("esfera por revolución del perfil") );
+   std::vector<glm::vec3> perfil;
+
+   for (int i=0; i < num_verts_perf; i++)
+   {
+      float alpha = -M_PI / 2.0 + float(i) / (num_verts_perf -1) * M_PI;
+      perfil.push_back(glm::vec3(cos(alpha), sin(alpha), 0));
+   }
+
+   // for (int i=0; i < num_verts_perf; i++)
+   // 
+   //    float k = float(i)/(num_verts_perf-1);
+   //    perfil.push_back(glm::vec3(k, sqrt(1-k*k), 0));
+   // }
+
+
+
+   inicializar(perfil, nperfiles);
+
+}

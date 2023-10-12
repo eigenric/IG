@@ -333,6 +333,8 @@ Escena2::Escena2()
    objetos.push_back( new MallaPLY("big_dodge.ply") );
    objetos.push_back( new MallaRevolPLY("peon.ply", 17) );
    objetos.push_back( new Cilindro(10, 50) );
+   objetos.push_back( new Cono(10, 50) );
+   objetos.push_back( new Esfera(50, 50) );
    
 }
 
