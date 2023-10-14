@@ -169,4 +169,24 @@ class CasaX: public MallaInd
       CasaX();
 };
 
+// ---------------------------------------------------------------------
+
+class MallaTriangulo: public MallaInd
+{
+   public:
+      MallaTriangulo();
+};
+
+class MallaCuadrado: public MallaInd
+{
+   public:
+      MallaCuadrado();
+};
+
+class MallaPiramideL: public MallaInd
+{
+   public:
+      MallaPiramideL();
+};
+
 #endif

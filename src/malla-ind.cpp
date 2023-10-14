@@ -536,3 +536,59 @@ CasaX::CasaX()
          {2,6,8}, {2,8,9}
       } ;
 }
+
+// -----------------------------------------------------------------------------------------------
+
+MallaTriangulo::MallaTriangulo()
+: MallaInd("malla para un triángulo de base 1 y altura raíz 2")
+{
+   vertices = 
+         {
+            {-0.5, 0, 0},
+            {+0.5, 0, 0},
+            { 0, sqrt(2), 0}
+         };
+   triangulos = {{0,1,2}};
+}
+
+
+MallaCuadrado::MallaCuadrado()
+: MallaInd("malla para un cuadrado de lado 2 con centro en el origen")
+{
+   vertices =
+         {
+            {-1, -1, 0},
+            {-1, +1, 0},
+            {+1, -1, 0},
+            {+1, +1, 0}
+         };
+
+   triangulos =
+         {
+            {0,1,2}, {1,2,3}
+         };
+}
+
+MallaPiramideL::MallaPiramideL()
+: MallaInd("malla para una pirámide con base en forma de L")
+{
+   vertices =
+         {
+            {-0.5, 0.0, 0.0}, // 0
+            {-0.5, 0.0, 1.0}, // 1
+            { 0.0, 0.0, 0.5}, // 2
+            { 0.0, 0.0, 1.0}, // 3
+            { 1.0, 0.0, 0.0}, // 4
+            { 1.0, 0.0, 0.5}, // 5
+            { -0.25, 1.0, 0.25} // 6
+         };
+
+   triangulos = 
+         {
+            {0,1,2}, {1,2,3},
+            {0,2,4}, {2,4,5},
+            {0,1,6}, {1,3,6},
+            {2,3,6}, {2,5,6},
+            {4,5,6}, {0,4,6}
+         };
+}

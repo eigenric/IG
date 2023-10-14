@@ -316,10 +316,19 @@ Escena1::Escena1()
    objetos.push_back( new CuboColores() );
    
    // Ejercicios Adicionales
+
+   // Ejercicio 1
    objetos.push_back( new EstrellaZ(8) );
    objetos.push_back( new EstrellaX(5) );
    objetos.push_back( new EstrellaY(10) );
+
+   // Ejercicio 2
    objetos.push_back( new CasaX() );
+
+   // Ejercicio 3
+   objetos.push_back( new MallaTriangulo() );
+   objetos.push_back( new MallaCuadrado() );
+   objetos.push_back( new MallaPiramideL() );
 
 }
 
