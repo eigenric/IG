@@ -85,7 +85,7 @@ EntradaNGE::~EntradaNGE()
 
 NodoGrafoEscena::NodoGrafoEscena()
 {
-
+   
 }
 
 // -----------------------------------------------------------------------------
@@ -119,6 +119,33 @@ void NodoGrafoEscena::visualizarGL(  )
    // 5. Si el objeto tiene color asignado:
    //     - restaurar el color original a la entrada (con 'popColor')
 
+   if (tieneColor())
+   {
+      cauce->pushColor();
+      cauce->fijarColor(leerColor());
+   }
+
+   cauce->pushMM();
+
+   for (size_t i=0; i < entradas.size(); i++)
+   {
+      switch(entradas[i].tipo)
+      {
+         case TipoEntNGE::objeto:
+            entradas[i].objeto->visualizarGL();
+            break;
+         case TipoEntNGE::transformacion:
+            cauce->compMM( *(entradas[i].matriz) );
+            break;
+         case TipoEntNGE::noInicializado:
+            break;
+      }
+   }
+
+   cauce->popMM();
+
+   if (tieneColor())
+      cauce->popColor();
 
    // COMPLETAR: práctica 4: añadir gestión de los materiales cuando la iluminación está activada    
    //
@@ -156,6 +183,26 @@ void NodoGrafoEscena::visualizarGeomGL(  )
 
    // .......
 
+   cauce->pushMM();
+
+   for (size_t i=0; i < entradas.size(); i++)
+   {
+      switch(entradas[i].tipo)
+      {
+         case TipoEntNGE::objeto:
+            entradas[i].objeto->visualizarGeomGL();
+            break;
+         case TipoEntNGE::transformacion:
+            cauce->compMM( *(entradas[i].matriz) );
+            break;
+         case TipoEntNGE::material:
+            break;
+         case TipoEntNGE::noInicializado:
+            break;
+      }
+   }
+
+   cauce->popMM();
 }
 
 // -----------------------------------------------------------------------------
@@ -220,7 +267,10 @@ unsigned NodoGrafoEscena::agregar( const EntradaNGE & entrada )
 {
    // COMPLETAR: práctica 3: agregar la entrada al nodo, devolver índice de la entrada agregada
    // ........
-   return 0 ; // sustituir por lo que corresponda ....
+
+   entradas.push_back(entrada);
+
+   return entradas.size()-1;
 
 }
 // -----------------------------------------------------------------------------
@@ -259,9 +309,12 @@ glm::mat4 * NodoGrafoEscena::leerPtrMatriz( unsigned indice )
    //
    // Sustituir 'return nullptr' por lo que corresponda.
    //
-   return nullptr ;
 
+   assert(indice > 0 && indice < entradas.size());
+   assert(entradas[indice].tipo == TipoEntNGE::transformacion);
+   assert(entradas[indice].matriz != nullptr);
 
+   return entradas[indice].matriz ;
 }
 // -----------------------------------------------------------------------------
 // si 'centro_calculado' es 'false', recalcula el centro usando los centros
