@@ -20,6 +20,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/debian/Desktop/ig-pracs-plantilla/src/malla-ind.cpp" "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-ind.cpp.o"
   "/home/debian/Desktop/ig-pracs-plantilla/src/malla-revol.cpp" "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-revol.cpp.o"
   "/home/debian/Desktop/ig-pracs-plantilla/src/materiales-luces.cpp" "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/materiales-luces.cpp.o"
+  "/home/debian/Desktop/ig-pracs-plantilla/src/modelo-jer.cpp" "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/modelo-jer.cpp.o"
   "/home/debian/Desktop/ig-pracs-plantilla/src/objeto3d.cpp" "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/objeto3d.cpp.o"
   "/home/debian/Desktop/ig-pracs-plantilla/src/seleccion.cpp" "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/seleccion.cpp.o"
   "/home/debian/Desktop/ig-pracs-plantilla/src/vaos-vbos.cpp" "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/vaos-vbos.cpp.o"
