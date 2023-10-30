@@ -10,11 +10,16 @@ using namespace glm;
 class Motherboard : public NodoGrafoEscena
 {
     protected:
-        unsigned num_parametros = 1;
+        float angulo_cabeza_inicial;
+        mat4x4* pm_rotacion_cabeza = nullptr;
+        unsigned num_parametros = 2;
+        unsigned cabeza; 
     public:
-        Motherboard();
+        Motherboard(float angulo_cabeza_inicial);
         unsigned leerNumParametros() const;
         void actualizarEstadoParametro(const unsigned iParam, const float t_sec);
+        void fijarRotacionCabeza(const float angulo_cabeza);
+
 };
 
 class BaseMotherboard : public MallaInd
@@ -31,7 +36,7 @@ class Cabeza : public NodoGrafoEscena
     public:
         Cabeza();
         unsigned leerNumParametros() const;
-        void actualizarEstadoParametro(const unsigned iPara, const float t_sec);
+        void actualizarEstadoParametro(const unsigned iParam, const float t_sec);
 };
 
 class Pelo: public NodoGrafoEscena

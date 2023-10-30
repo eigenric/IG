@@ -3,17 +3,26 @@
 
 using namespace glm;
 
-Motherboard::Motherboard()
+Motherboard::Motherboard(float angulo_cabeza_inicial)
 {
-
     agregar(new BaseMotherboard() );
-    agregar(new Cabeza() );
+
+    angulo_cabeza_inicial = angulo_cabeza_inicial;
+    unsigned ind_rot = agregar(rotate(radians(angulo_cabeza_inicial), vec3(0.0, 1.0, 0.0)));
+    cabeza = agregar(new Cabeza() );
+
+    pm_rotacion_cabeza = leerPtrMatriz(ind_rot);
 
 }
 
 unsigned Motherboard::leerNumParametros() const
 {
     return num_parametros;
+}
+
+void Motherboard::fijarRotacionCabeza(float angulo_cabeza)
+{
+    *pm_rotacion_cabeza = rotate(radians(angulo_cabeza), vec3(0.0, 1.0, 0.0));
 }
 
 void Motherboard::actualizarEstadoParametro(unsigned int iParam, const float t_sec)
@@ -23,7 +32,14 @@ void Motherboard::actualizarEstadoParametro(unsigned int iParam, const float t_s
     switch(iParam)
     {
         case 0:
-            ((Cabeza*)(entradas[1].objeto))->actualizarEstadoParametro(iParam, t_sec);
+            ((Cabeza*)(entradas[cabeza].objeto))->actualizarEstadoParametro(iParam, t_sec);
+            break;
+        case 1:
+            float v_min = -30.0f, v_max = 30.0f;
+            float a = angulo_cabeza_inicial;
+            float b = (v_max - v_min) / 2;
+            float n = 0.5;
+            fijarRotacionCabeza(a+b*sin(2*M_PI*n*t_sec));
             break;
     }
 
@@ -226,7 +242,7 @@ void OjoPupila::actualizarEstadoParametro(const unsigned iParam, const float t_s
             float v_min = -0.15, v_max = 0.15;
             float a = pos_pupila_inicial;
             float b = (v_max - v_min) / 2;
-            float n = 0.5;
+            float n = 1;
             fijarPosicionPupila(a+b*sin(2*M_PI*n*t_sec));
             break;
     }

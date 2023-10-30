@@ -76,7 +76,7 @@ void FGE_PulsarLevantarTecla( GLFWwindow* window, int key, int scancode, int act
       // del objeto actual ('objeto'), se debe usar 'ProcesarTeclaAnimacion': si devuelve
       // 'true', forzar revisualizar escena (asignando valor a 'revisualizar_escena')
 
-      if (ProcesarTeclaAnimacion(objeto, GLFW_KEY_RIGHT_BRACKET)) // Tecla + en el teclado
+      if (ProcesarTeclaAnimacion(objeto, key)) // Tecla + en el teclado
          apl->revisualizar_escena = true;
       
 
