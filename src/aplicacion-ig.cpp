@@ -250,7 +250,7 @@ void AplicacionIG::buclePrincipalGLFW(  )
       if ( revisualizar_escena )      //  si ha cambiado algo:
       {                               //
          visualizarFrame();          //     dibujar la escena
-         revisualizar_escena = true; //     evitar que se redibuje continuamente
+         revisualizar_escena = false; //     evitar que se redibuje continuamente
       }
 
       // 2. determinar si hay animaciones activas
