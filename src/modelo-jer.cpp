@@ -45,6 +45,8 @@ BaseMotherboard::BaseMotherboard()
             {0,2,4}, {2,4,6}
         };
 
+    ponerColor({0, 0, 0.7});
+
 }
 
 Cabeza::Cabeza()
@@ -61,6 +63,8 @@ Cabeza::Cabeza()
     agregar( new Nariz() );
     agregar( new OjoIzquierdo() );
     agregar( new OjoDerecho() );
+
+    ponerColor(vec3(0.6, 0.6, 1.0));
 }
 
 Pelo::Pelo()
@@ -72,6 +76,8 @@ Pelo::Pelo()
     agregar( scale(vec3(0.35, 2, 0.5)) );
     agregar( translate(vec3(0.0, -1.0, 0.75)) );
     agregar( new Rizos(50, 20) );
+
+    ponerColor({0, 0.6, 0.8});
 
 }
 
@@ -113,28 +119,110 @@ Semiesfera::Semiesfera
 
 Boca::Boca()
 {
-    std::cout << "Dibujando boca" << std::endl;
+    agregar( translate(vec3(0.0, -0.25, 0.85)) );
+    agregar( scale(vec3(0.2, 0.1, 0.2)) );
+    agregar( new BocaPoligono() );
+}
 
+BocaPoligono::BocaPoligono()
+{
+    vertices = 
+        {
+            {-1.0, +1.0, 0.0},
+            {+1.0, +1.0, 0.0},
+            {-2.0, 0.0, 0.0},
+            {-1.0, -1.0, 0.0},
+            {+1.0, -1.0, 0.0},
+            {+2.0, 0.0, 0.0},
+
+            {-0.5, +0.5, 0.0},
+            {+0.5, +0.5, 0.0},
+            {-1.0, 0.0, 0.0},
+            {-0.5, -0.5, 0.0},
+            {+0.5, -0.5, 0.0},
+            {+1.0, 0.0, 0.0}
+        };
+
+    triangulos =
+        {  
+            {0,2,6},{6,2,8},
+            {8,2,3},{3,9,8},
+            {9,3,4},{4,10,9},
+            {4,5,10},{10,5,11},
+            {11,5,1},{1,7,11},
+            {1,0,7},{7,0,6}
+        };
+
+    ponerColor({0,0,1});
 }
 
 Nariz::Nariz()
 {
-    std::cout << "Dibujando nariz" << std::endl;
+    agregar( translate(vec3(0, 0, 0.85)) );
+    agregar( scale(vec3(0.3, 0.5, 0.5)) );
+    agregar(new Tetraedro({0.0, 0.0, 1.0}));
 }
 
 OjoIzquierdo::OjoIzquierdo()
 {
-    std::cout << "Dibujando ojo izquierdo" << std::endl;
+    agregar( translate(vec3(-0.4, 0.4, 0.85)) );
+    agregar( scale(vec3(0.9, 0.9, 1.0)) );
+    agregar(new OjoPupila(0.1));
 
 }
 
 OjoDerecho::OjoDerecho()
 {
-    std::cout << "Dibujando ojo derecho" << std::endl;
+    agregar( translate(vec3(0.4, 0.4, 0.85)) );
+    agregar( scale(vec3(0.9, 0.9, 1.0)) );
+    agregar(new OjoPupila(0.1));
+
 
 }
 
-OjoPupila::OjoPupila()
+OjoPupila::OjoPupila(float radio_pupila)
+{  
+    agregar(new CircunferenciaZ(radio_pupila*3, {0,0,1}));
+    agregar( translate(vec3(0.0, 0.0, 0.1)) );
+    agregar(new CircunferenciaZ(radio_pupila, {0,0,0}));
+}
+
+CircunferenciaZ::CircunferenciaZ(float r, vec3 color)
 {
-    std::cout << "Dibujando ojo y pupila" << std::endl;
+
+    unsigned int num_verts = 10;
+
+    vertices.push_back(vec3(0, 0, 0));
+    for (int i=0; i < num_verts; i++)
+    {
+      float alpha = 2.0 * M_PI * float(i) / (num_verts -1);
+      vertices.push_back(glm::vec3(r*cos(alpha), r*sin(alpha), 0));
+    }
+
+    for (unsigned int i=1; i < 2*num_verts; i++)
+      triangulos.push_back({0, i, i+1});
+
+   // Triangulo con el origen
+   triangulos.push_back({0, 2*num_verts, 1});
+
+   ponerColor(color);
+   
+}
+
+RectanguloZ::RectanguloZ()
+{
+    vertices =
+        { 
+            {-1.0, -1.0, 0.0},
+            {+1.0, -1.0, 0.0},
+            {-1.0, +1.0, 0.0},
+            {+1.0, +1.0, 0.0}
+
+        };
+    triangulos = 
+        {
+            {0,1,2},{2,1,3}
+        };
+
+    ponerColor({0,0,0});
 }

@@ -34,6 +34,7 @@
 
 #include "objeto3d.h"   // declaración de 'Objeto3D'
 
+using namespace glm;
 
 // ---------------------------------------------------------------------
 // clase para objetos gráficos genéricos
@@ -136,7 +137,7 @@ class CuboColores : public Cubo
 class Tetraedro : public MallaInd
 {
    public:
-      Tetraedro();
+      Tetraedro(vec3 color=vec3(0.69, 0.055, 0.40));
 };
 
 // ---------------------------------------------------------------------

@@ -33,6 +33,7 @@
 #include "seleccion.h"   // para 'ColorDesdeIdent' 
 
 using namespace std;
+using namespace glm;
 
 // *****************************************************************************
 // funciones auxiliares
@@ -363,7 +364,7 @@ CuboColores::CuboColores()
 // ****************************************************************************
 // Clase Tetraedro
 
-Tetraedro::Tetraedro()
+Tetraedro::Tetraedro(vec3 color)
 : MallaInd("tetraedo 4 vértices")
 {
 
@@ -381,7 +382,7 @@ Tetraedro::Tetraedro()
          {0, 2, 3}, {1, 2, 3}
       };
    
-   ponerColor({0.69, 0.055, 0.404});
+   ponerColor(color);
 
 }
 // -----------------------------------------------------------------------------------------------

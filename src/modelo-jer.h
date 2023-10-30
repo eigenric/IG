@@ -5,6 +5,8 @@
 #include "malla-ind.h"
 #include "malla-revol.h"
 
+using namespace glm;
+
 class Motherboard : public NodoGrafoEscena
 {
     public:
@@ -52,6 +54,12 @@ class Semiesfera: public MallaRevol
 
 
 
+class BocaPoligono : public MallaInd
+{
+    public:
+        BocaPoligono();
+};
+
 class Boca : public NodoGrafoEscena
 {
     public:
@@ -79,7 +87,21 @@ class OjoDerecho : public NodoGrafoEscena
 class OjoPupila : public NodoGrafoEscena
 {
     public:
-        OjoPupila();
+        OjoPupila(float radio_pupila);
+};
+
+class CircunferenciaZ : public MallaInd
+{
+    public:
+        // Circunferencia de radio r en el plano perpendicular al eje Z
+        CircunferenciaZ(float r, vec3 color); 
+};
+
+class RectanguloZ: public MallaInd
+{
+    public:
+        // Rectangulo en el plano perpendicular al eje Z
+        RectanguloZ();
 };
 
 #endif // MODELO_JER_HPP
