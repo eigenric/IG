@@ -52,9 +52,10 @@ class MallaRevol : public MallaInd
    void inicializar
    (
       const std::vector<glm::vec3> & perfil,     // tabla de vértices del perfil original
-      const unsigned                 num_copias  // número de copias del perfil
+      const unsigned                 num_copias,  // número de copias del perfil
+      const bool                     semi = false
    ) ;
-} ;
+};
 // --------------------------------------------------------------------- 
 
 
@@ -63,8 +64,8 @@ class MallaRevolPLY : public MallaRevol
 {
    public:
    MallaRevolPLY( const std::string & nombre_arch,
-                  const unsigned nperfiles ) ;
-} ;
+                  const unsigned nperfiles);
+};
 
 
 // --------------------------------------------------------------------- 

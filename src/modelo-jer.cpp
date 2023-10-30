@@ -49,14 +49,66 @@ BaseMotherboard::BaseMotherboard()
 
 Cabeza::Cabeza()
 {
-    agregar( scale(vec3(0.5, 0.5, 0.25)) );
+    agregar( scale(vec3(0.5, 0.5, 0.2)) );
     agregar( translate(vec3(0.0, 1.6, 0.0)) );
     agregar( new Cubo() );
+    
+    agregar( scale(vec3(1.2, 1.2, 1.2)) );
+    agregar( translate(vec3(0.0, -0.25, 0.0)) );
+    agregar( new Pelo() );
 
     agregar( new Boca() );
     agregar( new Nariz() );
     agregar( new OjoIzquierdo() );
     agregar( new OjoDerecho() );
+}
+
+Pelo::Pelo()
+{
+    agregar( scale(vec3(1.0, 1.0, 2.0)) );
+    agregar( translate(vec3(0.0, 0.75, 0.0)) );
+    agregar( new Semiesfera(10, 50) );
+
+    agregar( scale(vec3(0.35, 2, 0.5)) );
+    agregar( translate(vec3(0.0, -1.0, 0.75)) );
+    agregar( new Rizos(50, 20) );
+
+}
+
+Rizos::Rizos
+(
+    const int num_verts_perf, 
+    const unsigned int nperfiles
+)
+{
+    std::vector<glm::vec3> perfil;
+
+    for (int i=0; i < num_verts_perf; i++)
+    {
+        float k = float(i)/(num_verts_perf-1);
+        perfil.push_back(vec3(3.0+0.2*cos(36*k), k, 0.0));
+    }
+
+    inicializar(perfil, nperfiles, true);
+}
+
+Semiesfera::Semiesfera
+(
+   const int num_verts_perf,
+   const unsigned nperfiles
+)
+{
+   ponerNombre( std::string("semi esfera por revolución del perfil") );
+   std::vector<glm::vec3> perfil;
+
+   for (int i=0; i < num_verts_perf; i++)
+   {
+      float alpha =  M_PI / 2.0 * float(i) / (num_verts_perf -1);
+      perfil.push_back(glm::vec3(cos(alpha), sin(alpha), 0));
+   }
+
+   inicializar(perfil, nperfiles);
+
 }
 
 Boca::Boca()

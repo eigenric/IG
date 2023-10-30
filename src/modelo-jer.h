@@ -3,14 +3,7 @@
 
 #include "grafo-escena.h"
 #include "malla-ind.h"
-
-class BaseMotherboard;
-class Cabeza;
-class Boca;
-class Nariz;
-class OjoPupila;
-class OjoIzquierdo;
-class OjoDerecho;
+#include "malla-revol.h"
 
 class Motherboard : public NodoGrafoEscena
 {
@@ -32,11 +25,32 @@ class Cabeza : public NodoGrafoEscena
         Cabeza();
 };
 
-class Paralelepipedo: public MallaInd
+class Pelo: public NodoGrafoEscena
 {
     public:
-        Paralelepipedo();
+        Pelo();
 };
+
+class Rizos: public MallaRevol
+{
+    public:
+        Rizos(const int num_verts_perf,
+             const unsigned nperfiles);
+};
+
+class Semiesfera: public MallaRevol
+{
+   public:
+   // Constructor: crea el perfil original y llama a inicializar
+   // La esfera tiene el centro en el origen, el radio es la unidad
+   Semiesfera
+   (
+      const int num_verts_per,
+      const unsigned nperfiles
+   ) ;
+};
+
+
 
 class Boca : public NodoGrafoEscena
 {

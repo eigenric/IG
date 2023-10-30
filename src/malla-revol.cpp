@@ -43,7 +43,8 @@ using namespace std ;
 void MallaRevol::inicializar
 (
    const std::vector<glm::vec3> & perfil,     // tabla de vértices del perfil original
-   const unsigned               num_copias  // número de copias del perfil
+   const unsigned               num_copias,  // número de copias del perfil
+   const bool semi
 )
 {
    using namespace glm ;
@@ -57,7 +58,11 @@ void MallaRevol::inicializar
    
    for (size_t i=0; i < num_copias; i++)
    {
-      float theta = 2.0*M_PI*float(i) / float(num_copias -1);
+      float theta;
+      if (!semi) // Complete circunference Default
+         theta = 2.0*M_PI*float(i) / float(num_copias -1);
+      else
+         theta = M_PI*float(i) / float(num_copias -1);
 
       for (size_t j=0; j < perfil.size(); j++)
       {
@@ -170,5 +175,6 @@ Esfera::Esfera
 
 
    inicializar(perfil, nperfiles);
-
 }
+
+
