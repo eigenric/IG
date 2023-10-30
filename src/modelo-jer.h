@@ -9,6 +9,8 @@ using namespace glm;
 
 class Motherboard : public NodoGrafoEscena
 {
+    protected:
+        unsigned num_parametros = 1;
     public:
         Motherboard();
         unsigned leerNumParametros() const;
@@ -23,8 +25,13 @@ class BaseMotherboard : public MallaInd
 
 class Cabeza : public NodoGrafoEscena
 {
+    protected:
+        unsigned num_parametros = 1; 
+        unsigned ojo_izq, ojo_der;
     public:
         Cabeza();
+        unsigned leerNumParametros() const;
+        void actualizarEstadoParametro(const unsigned iPara, const float t_sec);
 };
 
 class Pelo: public NodoGrafoEscena
@@ -74,20 +81,28 @@ class Nariz : public NodoGrafoEscena
 
 class OjoIzquierdo : public NodoGrafoEscena
 {
+    protected:
+        mat4x4* pm_posicion_ojo = nullptr;
+        float pos_ojo_inicial = 0.0;
+        unsigned num_parametros = 1;
     public:
-        OjoIzquierdo();
-};
-
-class OjoDerecho : public NodoGrafoEscena
-{
-    public:
-        OjoDerecho();
+        OjoIzquierdo(float pos_ojo_inicial);
+        unsigned leerNumParametros() const;
+        void actualizarEstadoParametro(const unsigned iParam, const float t_sec);
+        void fijarPosicionOjo(const float pos_ojo);
 };
 
 class OjoPupila : public NodoGrafoEscena
 {
+    protected:
+        unsigned num_parametros = 1;
+        float pos_pupila_inicial = 0.0;
+        mat4x4* pm_posicion_pupila = nullptr;
     public:
-        OjoPupila(float radio_pupila);
+        OjoPupila(float radio_pupila, float pos_pupila_inicial);
+        unsigned leerNumParametros() const;
+        void actualizarEstadoParametro(const unsigned iParam, const float t_sec);
+        void fijarPosicionPupila(const float pos_pupila);
 };
 
 class CircunferenciaZ : public MallaInd

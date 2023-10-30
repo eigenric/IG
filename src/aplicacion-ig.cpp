@@ -260,7 +260,7 @@ void AplicacionIG::buclePrincipalGLFW(  )
 
       Objeto3D * objeto = escenas[ind_escena_act]->objetoActual() ; assert( objeto != nullptr );
       const bool animacion_activa = AnimacionesActivadas() && 0 < objeto->leerNumParametros() ;
-      
+
       // 3. procesar eventos
 
       if ( animacion_activa )                  // si hay alguna animación en curso

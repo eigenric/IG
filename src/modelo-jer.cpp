@@ -8,16 +8,24 @@ Motherboard::Motherboard()
 
     agregar(new BaseMotherboard() );
     agregar(new Cabeza() );
+
 }
 
-unsigned int Motherboard::leerNumParametros() const
+unsigned Motherboard::leerNumParametros() const
 {
-    return 0;
+    return num_parametros;
 }
 
 void Motherboard::actualizarEstadoParametro(unsigned int iParam, const float t_sec)
 {
-    std::cout << "Actualizado el estado del parametro..." << std::endl;
+    assert(iParam <= leerNumParametros() -1);
+
+    switch(iParam)
+    {
+        case 0:
+            ((Cabeza*)(entradas[1].objeto))->actualizarEstadoParametro(iParam, t_sec);
+            break;
+    }
 
 }
 
@@ -61,11 +69,34 @@ Cabeza::Cabeza()
 
     agregar( new Boca() );
     agregar( new Nariz() );
-    agregar( new OjoIzquierdo() );
-    agregar( new OjoDerecho() );
+
+    agregar( translate(vec3(-0.4, 0.5, 0.85)) );
+    agregar( scale(vec3(1.0, 1.0, 4.16)) );
+    ojo_izq = agregar( new OjoPupila(0.1, 0.0) );
+    agregar( translate(vec3(0.8, 0.0, 0.0)) );
+    ojo_der = agregar( new OjoPupila(0.1, 0.0) );
 
     ponerColor(vec3(0.6, 0.6, 1.0));
+
 }
+
+unsigned Cabeza::leerNumParametros() const {
+    return num_parametros;
+} 
+
+void Cabeza::actualizarEstadoParametro(const unsigned iParam, const float t_sec)
+{
+    assert(iParam <= leerNumParametros() -1);
+
+    switch(iParam) {
+        case 0:
+            ((OjoPupila*)(entradas[ojo_izq].objeto))->actualizarEstadoParametro(iParam, t_sec);
+            ((OjoPupila*)(entradas[ojo_der].objeto))->actualizarEstadoParametro(iParam, t_sec);
+            break;
+    }
+
+}
+
 
 Pelo::Pelo()
 {
@@ -163,28 +194,42 @@ Nariz::Nariz()
     agregar(new Tetraedro({0.0, 0.0, 1.0}));
 }
 
-OjoIzquierdo::OjoIzquierdo()
-{
-    agregar( translate(vec3(-0.4, 0.4, 0.85)) );
-    agregar( scale(vec3(0.9, 0.9, 1.0)) );
-    agregar(new OjoPupila(0.1));
-
+unsigned OjoPupila::leerNumParametros() const {
+    return num_parametros;
 }
 
-OjoDerecho::OjoDerecho()
-{
-    agregar( translate(vec3(0.4, 0.4, 0.85)) );
-    agregar( scale(vec3(0.9, 0.9, 1.0)) );
-    agregar(new OjoPupila(0.1));
-
-
-}
-
-OjoPupila::OjoPupila(float radio_pupila)
+OjoPupila::OjoPupila(float radio_pupila, float pos_pupila_inicial)
 {  
     agregar(new CircunferenciaZ(radio_pupila*3, {0,0,1}));
-    agregar( translate(vec3(0.0, 0.0, 0.1)) );
+
+    pos_pupila_inicial = pos_pupila_inicial;
+    unsigned ind = agregar( translate(vec3(pos_pupila_inicial, 0.0, 0.05)) );
+    
     agregar(new CircunferenciaZ(radio_pupila, {0,0,0}));
+
+    pm_posicion_pupila = leerPtrMatriz(ind);
+}
+
+
+void OjoPupila::fijarPosicionPupila(const float pos_pupila)
+{
+    *pm_posicion_pupila = translate(vec3(pos_pupila, 0.0, 0.05) );
+}
+
+void OjoPupila::actualizarEstadoParametro(const unsigned iParam, const float t_sec)
+{
+    assert(iParam <= leerNumParametros() -1);
+
+    switch(iParam)
+    {
+        case 0:
+            float v_min = -0.15, v_max = 0.15;
+            float a = pos_pupila_inicial;
+            float b = (v_max - v_min) / 2;
+            float n = 0.5;
+            fijarPosicionPupila(a+b*sin(2*M_PI*n*t_sec));
+            break;
+    }
 }
 
 CircunferenciaZ::CircunferenciaZ(float r, vec3 color)
