@@ -269,21 +269,3 @@ CircunferenciaZ::CircunferenciaZ(float r, vec3 color)
    ponerColor(color);
    
 }
-
-RectanguloZ::RectanguloZ()
-{
-    vertices =
-        { 
-            {-1.0, -1.0, 0.0},
-            {+1.0, -1.0, 0.0},
-            {-1.0, +1.0, 0.0},
-            {+1.0, +1.0, 0.0}
-
-        };
-    triangulos = 
-        {
-            {0,1,2},{2,1,3}
-        };
-
-    ponerColor({0,0,0});
-}

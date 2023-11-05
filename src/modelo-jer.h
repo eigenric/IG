@@ -117,11 +117,5 @@ class CircunferenciaZ : public MallaInd
         CircunferenciaZ(float r, vec3 color); 
 };
 
-class RectanguloZ: public MallaInd
-{
-    public:
-        // Rectangulo en el plano perpendicular al eje Z
-        RectanguloZ();
-};
-
+s
 #endif // MODELO_JER_HPP
