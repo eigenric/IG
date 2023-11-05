@@ -117,5 +117,4 @@ class CircunferenciaZ : public MallaInd
         CircunferenciaZ(float r, vec3 color); 
 };
 
-s
 #endif // MODELO_JER_HPP
