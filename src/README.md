@@ -4,8 +4,8 @@ Prácticas realizadas por Ricardo Ruiz Fernánde de Alba para la asignatura de I
 
 ## Contenido
 
-- [ ] **Práctica 1. Visualización de Modelos Simples**
-- [ ] **Práctica 2**
-- [ ] **Práctica 3**
-- [ ] **Práctica 4**
-- [ ] **Práctica 5**
+- [x] **Práctica 1. Visualización de Modelos Simples**
+- [x] **Práctica 2. Modelos PLY y Poligonales**
+- [x] **Práctica 3. Modelos Jerárquicos**
+- [ ] **Práctica 4. Materiales, fuentes de luz y texturas.**
+- [ ] **Práctica 5. Interacción: cámaras y selección.**
