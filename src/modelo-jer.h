@@ -10,15 +10,17 @@ using namespace glm;
 class Motherboard : public NodoGrafoEscena
 {
     protected:
-        float angulo_cabeza_inicial;
+        float angulo_cabeza_inicial, angulo_cuello_inicial;
+        unsigned int num_parametros = 3;
+        unsigned int cabeza;
+        mat4x4* pm_rotacion_cuello = nullptr;
         mat4x4* pm_rotacion_cabeza = nullptr;
-        unsigned num_parametros = 2;
-        unsigned cabeza; 
     public:
-        Motherboard(float angulo_cabeza_inicial);
-        unsigned leerNumParametros() const;
+        Motherboard(float angulo_cuello_inicial, float angulo_cabeza_inicial);
+        unsigned int leerNumParametros() const;
         void actualizarEstadoParametro(const unsigned iParam, const float t_sec);
         void fijarRotacionCabeza(const float angulo_cabeza);
+        void fijarRotacionCuello(const float angulo_cuello);
 
 };
 
@@ -28,14 +30,20 @@ class BaseMotherboard : public MallaInd
         BaseMotherboard();
 };
 
+class Cuello: public NodoGrafoEscena
+{
+    public:
+        Cuello();
+};
+
 class Cabeza : public NodoGrafoEscena
 {
     protected:
-        unsigned num_parametros = 1; 
-        unsigned ojo_izq, ojo_der;
+        unsigned int num_parametros = 1; 
+        unsigned int ojo_izq, ojo_der;
     public:
         Cabeza();
-        unsigned leerNumParametros() const;
+        unsigned int leerNumParametros() const;
         void actualizarEstadoParametro(const unsigned iParam, const float t_sec);
 };
 

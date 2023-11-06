@@ -3,21 +3,34 @@
 
 using namespace glm;
 
-Motherboard::Motherboard(float angulo_cabeza_inicial)
+Motherboard::Motherboard(float angulo_cuello_inicial, float angulo_cabeza_inicial)
 {
     agregar(new BaseMotherboard() );
 
+    angulo_cuello_inicial = angulo_cuello_inicial;
     angulo_cabeza_inicial = angulo_cabeza_inicial;
-    unsigned ind_rot = agregar(rotate(radians(angulo_cabeza_inicial), vec3(0.0, 1.0, 0.0)));
+    
+    unsigned int ind_rot_cuello = agregar(rotate(radians(angulo_cuello_inicial), vec3(1.0, 0.0, 0.0)));
+    agregar(new Cuello());
+
+    agregar(translate(vec3(0, 0.1, 0.0)));
+    unsigned int ind_rot_cabeza = agregar(rotate(radians(angulo_cabeza_inicial), vec3(0.0, 1.0, 0.0)));
+    
     cabeza = agregar(new Cabeza() );
 
-    pm_rotacion_cabeza = leerPtrMatriz(ind_rot);
+    pm_rotacion_cuello = leerPtrMatriz(ind_rot_cuello);
+    pm_rotacion_cabeza = leerPtrMatriz(ind_rot_cabeza);
 
 }
 
-unsigned Motherboard::leerNumParametros() const
+unsigned int Motherboard::leerNumParametros() const
 {
     return num_parametros;
+}
+
+void Motherboard::fijarRotacionCuello(float angulo_cuello)
+{
+    *pm_rotacion_cuello = rotate(radians(angulo_cuello), vec3(1.0, 0.0, 0.0));
 }
 
 void Motherboard::fijarRotacionCabeza(float angulo_cabeza)
@@ -25,21 +38,36 @@ void Motherboard::fijarRotacionCabeza(float angulo_cabeza)
     *pm_rotacion_cabeza = rotate(radians(angulo_cabeza), vec3(0.0, 1.0, 0.0));
 }
 
+
 void Motherboard::actualizarEstadoParametro(unsigned int iParam, const float t_sec)
 {
     assert(iParam <= leerNumParametros() -1);
 
     switch(iParam)
     {
-        case 0:
-            ((Cabeza*)(entradas[cabeza].objeto))->actualizarEstadoParametro(iParam, t_sec);
+        // Rotacion oscilante alrededor del eje X del cuello
+        case 0: 
+        {
+            float v_min = -15.0f, v_max = 15.0f;
+            float a = angulo_cuello_inicial;
+            float b = (v_max - v_min) / 2;
+            float n = 0.5;
+            fijarRotacionCuello(a+b*sin(2*M_PI*n*t_sec));
             break;
-        case 1:
+        }
+        // Rotacion oscilante alrededor del eje Y de la cabeza
+        case 1: 
+        {
             float v_min = -30.0f, v_max = 30.0f;
             float a = angulo_cabeza_inicial;
             float b = (v_max - v_min) / 2;
-            float n = 0.5;
+            float n = 0.75;
             fijarRotacionCabeza(a+b*sin(2*M_PI*n*t_sec));
+            break;
+        }
+        // Para el movimiento de las pupilas delega en actualizarEstadoParametro de Cabeza
+        case 2:
+            ((Cabeza*)(entradas[cabeza].objeto))->actualizarEstadoParametro(0, t_sec);
             break;
     }
 
@@ -73,6 +101,19 @@ BaseMotherboard::BaseMotherboard()
 
 }
 
+Cuello::Cuello()
+{
+    agregar(scale(vec3(0.132, 0.132, 0.132)));
+    agregar(translate(vec3(0.0, 1.12, 0.0)));
+    agregar(new Cilindro(10, 20));
+    agregar(translate(vec3(0.0, 1.0, 0.0)));
+    agregar(new Cilindro(10, 20));
+
+
+    ponerColor({0.2823,0.2392,0.545});
+}
+
+
 Cabeza::Cabeza()
 {
     agregar( scale(vec3(0.5, 0.5, 0.2)) );
@@ -93,26 +134,24 @@ Cabeza::Cabeza()
     ojo_der = agregar( new OjoPupila(0.1, 0.0) );
 
     ponerColor(vec3(0.6, 0.6, 1.0));
-
 }
 
-unsigned Cabeza::leerNumParametros() const {
+unsigned int Cabeza::leerNumParametros() const {
     return num_parametros;
 } 
 
+
 void Cabeza::actualizarEstadoParametro(const unsigned iParam, const float t_sec)
 {
-    assert(iParam <= leerNumParametros() -1);
+    assert( iParam <= leerNumParametros()-1 );
 
     switch(iParam) {
         case 0:
-            ((OjoPupila*)(entradas[ojo_izq].objeto))->actualizarEstadoParametro(iParam, t_sec);
-            ((OjoPupila*)(entradas[ojo_der].objeto))->actualizarEstadoParametro(iParam, t_sec);
+            ((OjoPupila*)(entradas[ojo_izq].objeto))->actualizarEstadoParametro(0, t_sec);
+            ((OjoPupila*)(entradas[ojo_der].objeto))->actualizarEstadoParametro(0, t_sec);
             break;
     }
-
 }
-
 
 Pelo::Pelo()
 {
@@ -235,7 +274,7 @@ void OjoPupila::fijarPosicionPupila(const float pos_pupila)
 void OjoPupila::actualizarEstadoParametro(const unsigned iParam, const float t_sec)
 {
     assert(iParam <= leerNumParametros() -1);
-
+    
     switch(iParam)
     {
         case 0:
@@ -254,7 +293,7 @@ CircunferenciaZ::CircunferenciaZ(float r, vec3 color)
     unsigned int num_verts = 10;
 
     vertices.push_back(vec3(0, 0, 0));
-    for (int i=0; i < num_verts; i++)
+    for (unsigned int i=0; i < num_verts; i++)
     {
       float alpha = 2.0 * M_PI * float(i) / (num_verts -1);
       vertices.push_back(glm::vec3(r*cos(alpha), r*sin(alpha), 0));
