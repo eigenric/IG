@@ -166,15 +166,5 @@ Esfera::Esfera
       perfil.push_back(glm::vec3(cos(alpha), sin(alpha), 0));
    }
 
-   // for (int i=0; i < num_verts_perf; i++)
-   // 
-   //    float k = float(i)/(num_verts_perf-1);
-   //    perfil.push_back(glm::vec3(k, sqrt(1-k*k), 0));
-   // }
-
-
-
    inicializar(perfil, nperfiles);
 }
-
-
