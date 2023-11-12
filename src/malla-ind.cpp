@@ -616,3 +616,31 @@ PiramideEstrellaZ::PiramideEstrellaZ(unsigned int n)
    // Falta el triángulo final para completar ciclo.
    triangulos.push_back({2*n, 2*n+1, 1});
 }
+
+RejillaY::RejillaY(unsigned int n, unsigned int m)
+: MallaInd("malla para una rejilla en el plano XZ de dimensión " + to_string(n) + "x" + to_string(m))
+{
+   assert( n > 1 && m > 1 );
+
+   for (unsigned int i=0; i < m; i++)
+   {
+      for (unsigned int j=0; j < n; j++)
+      {
+         vertices.push_back({float(j)/(n-1), 0, float(i)/(m-1)});
+         col_ver.push_back({float(j)/(n-1), 0, float(i)/(m-1)});
+         cout << "Añadiendo vértice: ( " << float(j)/(n-1) << ", " << 0 << "," << float(i)/(m-1) << ")" << endl;
+      }
+   }
+
+   for (unsigned int i=0; i < m-1; i++)
+   {
+      for (unsigned int j=0; j < n-1; j++)
+      {
+         triangulos.push_back({i*n+j, (i+1)*n+j, i*n+j+1});
+         cout << "Celda " << i*m+j << ": " << endl;
+         cout << "Añadiendo triangulo: (" << i*n+j << "," << (i+1)*n+j << "," << i*n+j+1 << ")" << endl;
+         triangulos.push_back({i*n+j+1, (i+1)*n+j, (i+1)*n+j+1});
+         cout << "Añadiendo triangulo: (" << i*n+j+1 << "," << (i+1)*n+j << "," << (i+1)*n+j+1 << ")" << endl;
+      }
+   }
+}

@@ -123,6 +123,7 @@ void Escena::visualizarGL( )
       case ModosVisu::relleno : glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); break;
       case ModosVisu::lineas : glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); break;
       case ModosVisu::puntos: glPolygonMode(GL_FRONT_AND_BACK, GL_POINT); break;
+      case ModosVisu::num_modos: break;
    }
 
    CError();
@@ -330,8 +331,6 @@ Escena1::Escena1()
    objetos.push_back( new MallaCuadrado() );
    objetos.push_back( new MallaPiramideL() );
 
-   // Ejercicio Adicional 1
-   objetos.push_back( new PiramideEstrellaZ(5) );
 }
 
 // -------------------------------------------------------------------------
@@ -345,6 +344,12 @@ Escena2::Escena2()
 {
    using namespace std;
    cout << "Creando objetos de la práctica 2." << endl;
+
+   // // Ejercicio Adicional 1
+   // objetos.push_back( new PiramideEstrellaZ(5) );
+
+   // Ejercicio Adicional 2
+   objetos.push_back( new RejillaY(10, 13) );
 
    objetos.push_back( new MallaPLY("beethoven.ply") );
    objetos.push_back( new MallaPLY("big_dodge.ply") );
