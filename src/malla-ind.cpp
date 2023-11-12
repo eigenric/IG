@@ -628,7 +628,6 @@ RejillaY::RejillaY(unsigned int n, unsigned int m)
       {
          vertices.push_back({float(j)/(n-1), 0, float(i)/(m-1)});
          col_ver.push_back({float(j)/(n-1), 0, float(i)/(m-1)});
-         cout << "Añadiendo vértice: ( " << float(j)/(n-1) << ", " << 0 << "," << float(i)/(m-1) << ")" << endl;
       }
    }
 
@@ -637,10 +636,7 @@ RejillaY::RejillaY(unsigned int n, unsigned int m)
       for (unsigned int j=0; j < n-1; j++)
       {
          triangulos.push_back({i*n+j, (i+1)*n+j, i*n+j+1});
-         cout << "Celda " << i*m+j << ": " << endl;
-         cout << "Añadiendo triangulo: (" << i*n+j << "," << (i+1)*n+j << "," << i*n+j+1 << ")" << endl;
          triangulos.push_back({i*n+j+1, (i+1)*n+j, (i+1)*n+j+1});
-         cout << "Añadiendo triangulo: (" << i*n+j+1 << "," << (i+1)*n+j << "," << (i+1)*n+j+1 << ")" << endl;
       }
    }
 }
