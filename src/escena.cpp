@@ -330,6 +330,8 @@ Escena1::Escena1()
    objetos.push_back( new MallaCuadrado() );
    objetos.push_back( new MallaPiramideL() );
 
+   // Ejercicio Adicional 1
+   objetos.push_back( new PiramideEstrellaZ(5) );
 }
 
 // -------------------------------------------------------------------------

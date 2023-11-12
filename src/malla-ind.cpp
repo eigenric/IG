@@ -593,3 +593,26 @@ MallaPiramideL::MallaPiramideL()
             {5,6,4}, {0,6,4}
          };
 }
+
+PiramideEstrellaZ::PiramideEstrellaZ(unsigned int n)
+: MallaInd("malla para una pirámide con forma de Estrella de " + to_string(n) + " puntas en el Plano XY")
+{
+   assert( n > 1 );
+   
+   EstrellaZ base = EstrellaZ(n);
+
+   vertices = base.refVertices();
+   triangulos = base.refTriangulos();
+   col_ver = base.refColVer();
+
+   // Ápice blanco de la piramide. Vértice 2*n+1
+   vertices.push_back({0.5, 0.5, 0.5});
+   col_ver.push_back({1.0, 1.0, 1.0});
+
+   // Triángulo centro estrella, punta (índice impar), ápice.
+   for (unsigned int i=0; i < 2*n ; i++)
+      triangulos.push_back({i, i+1, 2*n+1});
+   
+   // Falta el triángulo final para completar ciclo.
+   triangulos.push_back({2*n, 2*n+1, 1});
+}

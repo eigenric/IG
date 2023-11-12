@@ -99,9 +99,7 @@ class MallaInd : public Objeto3D
       // métodos para acceder a las tablas de una malla (acceso de lectura)
       const std::vector<glm::vec3> & refVertices()   const { return vertices ;  } 
       const std::vector<glm::uvec3> & refTriangulos() const { return triangulos ; }
-      
-
-
+      const std::vector<glm::vec3> & refColVer() const { return col_ver ; }
      
 } ;
 // ---------------------------------------------------------------------
@@ -188,6 +186,12 @@ class MallaPiramideL: public MallaInd
 {
    public:
       MallaPiramideL();
+};
+
+class PiramideEstrellaZ: public MallaInd
+{
+   public:
+      PiramideEstrellaZ(unsigned int n);
 };
 
 #endif
