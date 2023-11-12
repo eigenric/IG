@@ -48,7 +48,7 @@ void Motherboard::actualizarEstadoParametro(unsigned int iParam, const float t_s
         // Rotacion oscilante alrededor del eje X del cuello
         case 0: 
         {
-            float v_min = -15.0f, v_max = 15.0f;
+            float v_min = -10.0f, v_max = 10.0f;
             float a = angulo_cuello_inicial;
             float b = (v_max - v_min) / 2;
             float n = 0.5;
