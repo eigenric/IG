@@ -345,11 +345,15 @@ Escena2::Escena2()
    using namespace std;
    cout << "Creando objetos de la práctica 2." << endl;
 
-   // // Ejercicio Adicional 1
-   // objetos.push_back( new PiramideEstrellaZ(5) );
+   // Ejercicio Adicional 1
+   objetos.push_back( new PiramideEstrellaZ(5) );
 
    // Ejercicio Adicional 2
    objetos.push_back( new RejillaY(10, 13) );
+
+   // Ejercicio Adicional 3
+   objetos.push_back( new MallaTorre(5) );
+
 
    objetos.push_back( new MallaPLY("beethoven.ply") );
    objetos.push_back( new MallaPLY("big_dodge.ply") );

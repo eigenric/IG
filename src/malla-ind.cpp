@@ -406,7 +406,7 @@ EstrellaZ::EstrellaZ(unsigned int n)
 
       // Vértices intermedios (Ángulo mitad entre dos puntas)
       float theta = M_PI * (2*float(i)+1)/ n;
-      glm::vec3 v_inter(0.5 + 0.5/3*cos(theta), 0.5 + 0.5/3*sin(theta), 0);
+      glm::vec3 v_inter(0.5 + 0.25*cos(theta), 0.5 + 0.25*sin(theta), 0);
 
       vertices.push_back(v_inter);
       col_ver.push_back(v_inter);
@@ -639,4 +639,34 @@ RejillaY::RejillaY(unsigned int n, unsigned int m)
          triangulos.push_back({i*n+j+1, (i+1)*n+j, (i+1)*n+j+1});
       }
    }
+}
+
+MallaTorre::MallaTorre(unsigned int n)
+: MallaInd("malla para una torre de cubos de " + to_string(n) +" plantas")
+{
+   assert( n > 0 );
+
+   for (unsigned int i=0; i < n+1; i++)
+   {
+      vertices.push_back({-0.5, i, -0.5});
+      vertices.push_back({-0.5, i, 0.5});
+      vertices.push_back({+0.5, i, -0.5});
+      vertices.push_back({+0.5, i, +0.5});
+   }
+
+   for (unsigned int i=0; i < n; i++)
+   {
+      triangulos.push_back({1+4*i, 3+4*i, 7+4*i});
+      triangulos.push_back({1+4*i, 7+4*i, 5+4*i});
+
+      triangulos.push_back({3+4*i, 2+4*i, 6+4*i});
+      triangulos.push_back({3+4*i, 6+4*i, 7+4*i});
+      
+      triangulos.push_back({4*i, 4+4*i, 2+4*i});
+      triangulos.push_back({2+4*i, 4+4*i, 6+4*i});
+
+      triangulos.push_back({4*i, 5+4*i, 4+4*i});
+      triangulos.push_back({4*i, 1+4*i, 5+4*i});
+   }
+
 }
