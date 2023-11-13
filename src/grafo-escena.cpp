@@ -374,18 +374,19 @@ GrafoEstrellaX::GrafoEstrellaX(unsigned int n, float angulo_rotacion_inicial)
 {
    assert( n > 1 );
 
-   // Estrella de n puntas perpendicular al Eje X 
-   // con radio 0.5 y centro (0, 0.5, 0.5)
    NodoGrafoEscena* estrellaOrigen = new NodoGrafoEscena();
 
+   // Estrella de n puntas perpendicular al Eje X 
+   // con radio 0.5 y centro (0, 0.5, 0.5)
    EstrellaX* estrella = new EstrellaX(n);   
 
    // La movemos al origen y reescalamos para que tenga radio 1.3
    estrellaOrigen->agregar(translate(vec3(0.0, -1.3, -1.3)));
    estrellaOrigen->agregar(scale(vec3(1,  2.6, 2.6)));
 
+   // El grado de libertad consiste en rotar la estrella alrededor del centro (Eje X)
    angulo_rotacion_inicial = angulo_rotacion_inicial;
-   unsigned int ind_rot = agregar(rotate(angulo_rotacion_inicial, vec3(-1.3, 0, 0)));
+   unsigned int ind_rot = agregar(rotate(angulo_rotacion_inicial, vec3(1, 0, 0)));
 
    estrellaOrigen->agregar(estrella);
    agregar(estrellaOrigen);
@@ -393,7 +394,6 @@ GrafoEstrellaX::GrafoEstrellaX(unsigned int n, float angulo_rotacion_inicial)
    Cono* cono = new Cono(10, 50);
 
    vector<NodoGrafoEscena*> conosPunta(n);
-   NodoGrafoEscena* conos = new NodoGrafoEscena();
 
    for (size_t i=0; i < n; i++)
    { 
@@ -406,11 +406,10 @@ GrafoEstrellaX::GrafoEstrellaX(unsigned int n, float angulo_rotacion_inicial)
       conosPunta[i]->agregar(rotate(alpha, vec3(1,0,0)));
       conosPunta[i]->agregar(cono);
 
-      conos->agregar(conosPunta[i]);
+      agregar(conosPunta[i]);
 
    }
 
-   agregar(conos);
 
    pm_rotacion_estrella = leerPtrMatriz(ind_rot);
 }
