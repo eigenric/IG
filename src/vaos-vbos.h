@@ -1,3 +1,6 @@
+// Nombre: Ricardo, Apellidos: Ruiz Fernández de Alba, Titulación: GIM
+// email: ricardoruiz@correo.ugr.es, DNI: 77168601J
+
 #ifndef VBOS_VAOS_H
 #define VBOS_VAOS_H
 
