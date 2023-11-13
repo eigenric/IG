@@ -399,14 +399,14 @@ EstrellaZ::EstrellaZ(unsigned int n)
    {
       // Vértices de las puntas
       float alpha = 2.0*float(i)*M_PI / n;
-      glm::vec3 v_punta(0.5 + 0.5*cos(alpha), 0.5+0.5*sin(alpha), 0);
+      glm::vec3 v_punta(0.5 + 0.5*cos(alpha), 0.5-0.5*sin(alpha), 0);
 
       vertices.push_back(v_punta);
       col_ver.push_back(v_punta); // RGB a partir de coordenadas
 
       // Vértices intermedios (Ángulo mitad entre dos puntas)
       float theta = M_PI * (2*float(i)+1)/ n;
-      glm::vec3 v_inter(0.5 + 0.25*cos(theta), 0.5 + 0.25*sin(theta), 0);
+      glm::vec3 v_inter(0.5 + 0.25*cos(theta), 0.5-0.25*sin(theta), 0);
 
       vertices.push_back(v_inter);
       col_ver.push_back(v_inter);
@@ -428,20 +428,18 @@ EstrellaX::EstrellaX(unsigned int n)
 : MallaInd(string("estrella en plano YZ de ") + to_string(n) + string(" puntas"))
 {
    // Centro de la estrella de color blanco
-   vertices.push_back({0, 0.5, 0.5 });
+   vertices.push_back({0, 0.5, 0.5});
    col_ver.push_back({1.0, 1.0, 1.0});
-
 
    for (unsigned int i=0; i < n; i++)
    {
       // Vértices de las puntas
       float alpha = 2.0*float(i)*M_PI / n;
-      glm::vec3 v_punta(0, 0.5 + 0.5*cos(alpha), 0.5+0.5*sin(alpha));
-
+      glm::vec3 v_punta(0, 0.5 + 0.5*cos(alpha), 0.5 + 0.5*sin(alpha));
       vertices.push_back(v_punta);
       col_ver.push_back(v_punta); // RGB a partir de coordenadas
 
-      // Vértices intermedios (Ángulo mitad entre dos puntas)
+      // Vértices intermedios (angulo mitad)
       float theta = M_PI * (2*float(i)+1)/ n;
       glm::vec3 v_inter(0, 0.5 + 0.5/3*cos(theta), 0.5 + 0.5/3*sin(theta));
 
@@ -476,7 +474,7 @@ EstrellaY::EstrellaY(unsigned int n)
 
       // Vértices intermedios (Ángulo mitad entre dos puntas)
       float theta = M_PI * (2*float(i)+1)/ n;
-      glm::vec3 v_inter(0.5 + 0.5/3*cos(theta), 0, 0.5 + 0.5/3*sin(theta));
+      glm::vec3 v_inter(0.5 + 0.25*cos(theta), 0, 0.5+0.25*sin(theta));
 
       vertices.push_back(v_inter);
       col_ver.push_back(v_inter);

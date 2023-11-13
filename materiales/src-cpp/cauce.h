@@ -128,6 +128,8 @@ class Cauce
    // (según el estándar OpenGL, ese número debe ser como minimo 8) (aunque en OpenGL 4.1 quizás no tiene sentido!)
    unsigned maxNumFuentesLuz() { return 8 ; } ;
 
+   inline glm::mat4 get_mat_modelado() const { return mat_modelado; };
+
    private:
 
    GLuint

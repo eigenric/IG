@@ -39,10 +39,6 @@
 
 class MallaRevol : public MallaInd
 {
-   private:
-
-
-
    protected: //
 
    MallaRevol() {} // solo usable desde clases derivadas con constructores especificos

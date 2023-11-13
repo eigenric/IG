@@ -32,6 +32,7 @@
 
 #include "objeto3d.h"
 #include "malla-ind.h" // para poder usar clase MallaInd
+#include "malla-revol.h"
 #include "materiales-luces.h"
 
 //using namespace tup_mat ;
@@ -118,6 +119,18 @@ class NodoGrafoEscena : public Objeto3D
 
 // *********************************************************************
 
+class GrafoEstrellaX : public NodoGrafoEscena
+{
+   protected:
+      float angulo_rotacion_inicial;
+      unsigned int num_parametros = 1;
+      mat4x4 *pm_rotacion_estrella = nullptr;
+   public:
+      GrafoEstrellaX(unsigned int n, float angulo_rotacion_inicial);
+      unsigned int leerNumParametros() const;
+      void actualizarEstadoParametro(const unsigned iParam, const float t_sec);
+      void fijarRotacion(const float angulo_rot);
+};
 
 
 

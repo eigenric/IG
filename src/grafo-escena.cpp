@@ -29,8 +29,9 @@
 #include "grafo-escena.h"
 #include "aplicacion-ig.h"
 #include "seleccion.h"   // para 'ColorDesdeIdent' 
+#include <unistd.h>
 
-
+using namespace std;
 
 // *********************************************************************
 // Entrada del nodo del Grafo de Escena
@@ -136,6 +137,8 @@ void NodoGrafoEscena::visualizarGL(  )
             break;
          case TipoEntNGE::transformacion:
             cauce->compMM( *(entradas[i].matriz) );
+            break;
+         case TipoEntNGE::material:
             break;
          case TipoEntNGE::noInicializado:
             break;
@@ -310,7 +313,7 @@ glm::mat4 * NodoGrafoEscena::leerPtrMatriz( unsigned indice )
    // Sustituir 'return nullptr' por lo que corresponda.
    //
 
-   assert(indice > 0 && indice < entradas.size());
+   assert(indice < entradas.size());
    assert(entradas[indice].tipo == TipoEntNGE::transformacion);
    assert(entradas[indice].matriz != nullptr);
 
@@ -367,11 +370,73 @@ bool NodoGrafoEscena::buscarObjeto
    return false ;
 }
 
+GrafoEstrellaX::GrafoEstrellaX(unsigned int n, float angulo_rotacion_inicial)
+{
+   assert( n > 1 );
 
+   // Estrella de n puntas perpendicular al Eje X 
+   // con radio 0.5 y centro (0, 0.5, 0.5)
+   NodoGrafoEscena* estrellaOrigen = new NodoGrafoEscena();
 
+   EstrellaX* estrella = new EstrellaX(n);   
 
+   // La movemos al origen y reescalamos para que tenga radio 1.3
+   estrellaOrigen->agregar(translate(vec3(0.0, -1.3, -1.3)));
+   estrellaOrigen->agregar(scale(vec3(1,  2.6, 2.6)));
 
+   angulo_rotacion_inicial = angulo_rotacion_inicial;
+   unsigned int ind_rot = agregar(rotate(angulo_rotacion_inicial, vec3(-1.3, 0, 0)));
 
+   estrellaOrigen->agregar(estrella);
+   agregar(estrellaOrigen);
 
+   Cono* cono = new Cono(10, 50);
 
+   vector<NodoGrafoEscena*> conosPunta(n);
+   NodoGrafoEscena* conos = new NodoGrafoEscena();
 
+   for (size_t i=0; i < n; i++)
+   { 
+      conosPunta[i] = new NodoGrafoEscena();
+
+      float alpha = 2.0f*float(i)*float(M_PI)/float(n);
+      conosPunta[i]->agregar(translate(vec3(0, 1.3*cos(alpha), 1.3*sin(alpha))));
+      conosPunta[i]->agregar(scale(vec3(0.14, 0.15, 0.14)));
+      // Rotamos para que el eje del cono coincida con el radio de la estrella 
+      conosPunta[i]->agregar(rotate(alpha, vec3(1,0,0)));
+      conosPunta[i]->agregar(cono);
+
+      conos->agregar(conosPunta[i]);
+
+   }
+
+   agregar(conos);
+
+   pm_rotacion_estrella = leerPtrMatriz(ind_rot);
+}
+
+unsigned int GrafoEstrellaX::leerNumParametros() const
+{
+   return num_parametros;
+}
+
+void GrafoEstrellaX::fijarRotacion(const float angulo_rot)
+{
+   *pm_rotacion_estrella = rotate(angulo_rot, vec3(1, 0, 0));
+}
+
+void GrafoEstrellaX::actualizarEstadoParametro(const unsigned iParam, const float t_sec)
+{
+   assert(iParam <= leerNumParametros() -1);
+
+   switch(iParam)
+   {
+      case 0:
+         float a = angulo_rotacion_inicial;
+         // Velocidad de 2.5 vueltas por segundo
+         float b = 2.5;
+         fijarRotacion(a+b*t_sec);
+         break;
+   }
+
+}

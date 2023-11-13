@@ -377,8 +377,9 @@ Escena3::Escena3()
    using namespace std;
    cout << "Creando objetos de la práctica 3." << endl;
 
-   objetos.push_back( new Motherboard(0.0, 0.0) );
+   objetos.push_back( new GrafoEstrellaX(6, 0) );
 
+   objetos.push_back( new Motherboard(0.0, 0.0) );
 }
 
 

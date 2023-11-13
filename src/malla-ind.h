@@ -100,7 +100,6 @@ class MallaInd : public Objeto3D
       const std::vector<glm::vec3> & refVertices()   const { return vertices ;  } 
       const std::vector<glm::uvec3> & refTriangulos() const { return triangulos ; }
       const std::vector<glm::vec3> & refColVer() const { return col_ver ; }
-     
 } ;
 // ---------------------------------------------------------------------
 // Clase para mallas obtenidas de un archivo 'ply'
