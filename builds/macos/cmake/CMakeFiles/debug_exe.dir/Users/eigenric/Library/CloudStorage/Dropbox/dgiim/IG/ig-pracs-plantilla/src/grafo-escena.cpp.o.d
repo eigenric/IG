@@ -1107,7 +1107,16 @@ CMakeFiles/debug_exe.dir/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig
   /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src/objeto3d.h \
   /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src/malla-ind.h \
   /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src/vaos-vbos.h \
+  /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src/malla-revol.h \
   /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src/materiales-luces.h \
   /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src/aplicacion-ig.h \
   /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src/seleccion.h \
-  /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src/escena.h
+  /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src/escena.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/unistd.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/unistd.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_posix_vdisable.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_seek_set.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/select.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_select.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_uuid_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/gethostuuid.h

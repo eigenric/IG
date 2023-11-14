@@ -1110,4 +1110,6 @@ CMakeFiles/debug_exe.dir/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig
   /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src/camara.h \
   /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src/materiales-luces.h \
   /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src/escena.h \
-  /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src/aplicacion-ig.h
+  /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src/aplicacion-ig.h \
+  /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src/modelo-jer.h \
+  /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src/grafo-escena.h

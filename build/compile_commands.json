@@ -67,6 +67,12 @@
 },
 {
   "directory": "/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/build",
+  "command": "/usr/bin/clang++  -I/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src -I/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../materiales/src-cpp -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks  -std=c++20 -Wall -Wextra -Wno-unused-parameter -Wno-unused-private-field -Wfatal-errors -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -g -o CMakeFiles/debug_exe.dir/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp.o -c /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp",
+  "file": "/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp",
+  "output": "CMakeFiles/debug_exe.dir/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp.o"
+},
+{
+  "directory": "/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/build",
   "command": "/usr/bin/clang++  -I/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src -I/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../materiales/src-cpp -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks  -std=c++20 -Wall -Wextra -Wno-unused-parameter -Wno-unused-private-field -Wfatal-errors -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -g -o CMakeFiles/debug_exe.dir/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/objeto3d.cpp.o -c /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/objeto3d.cpp",
   "file": "/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/objeto3d.cpp",
   "output": "CMakeFiles/debug_exe.dir/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/objeto3d.cpp.o"
@@ -178,6 +184,12 @@
   "command": "/usr/bin/clang++  -I/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src -I/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../materiales/src-cpp -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks  -std=c++20 -Wall -Wextra -Wno-unused-parameter -Wno-unused-private-field -Wfatal-errors -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -g -o CMakeFiles/release_exe.dir/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/materiales-luces.cpp.o -c /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/materiales-luces.cpp",
   "file": "/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/materiales-luces.cpp",
   "output": "CMakeFiles/release_exe.dir/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/materiales-luces.cpp.o"
+},
+{
+  "directory": "/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/build",
+  "command": "/usr/bin/clang++  -I/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../src -I/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/../../materiales/src-cpp -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks  -std=c++20 -Wall -Wextra -Wno-unused-parameter -Wno-unused-private-field -Wfatal-errors -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -g -o CMakeFiles/release_exe.dir/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp.o -c /Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp",
+  "file": "/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp",
+  "output": "CMakeFiles/release_exe.dir/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp.o"
 },
 {
   "directory": "/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/build",

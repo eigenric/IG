@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/bin/release_exe"
+			"path" : "/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/bin/debug_exe"
 		}
 	],
 	"backtrace" : 1,
@@ -25,13 +25,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 51,
+				"line" : 46,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 52,
+				"line" : 47,
 				"parent" : 0
 			}
 		]
@@ -90,11 +90,12 @@
 				15,
 				16,
 				17,
-				18
+				18,
+				19
 			]
 		}
 	],
-	"id" : "release_exe::@6890427a1f51a3e7e1df",
+	"id" : "debug_exe::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -125,8 +126,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "release_exe",
-	"nameOnDisk" : "release_exe",
+	"name" : "debug_exe",
+	"nameOnDisk" : "debug_exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -156,14 +157,14 @@
 				15,
 				16,
 				17,
-				18
+				18,
+				19
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				19,
 				20,
 				21,
 				22,
@@ -180,7 +181,9 @@
 				33,
 				34,
 				35,
-				36
+				36,
+				37,
+				38
 			]
 		}
 	],
@@ -250,6 +253,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/materiales-luces.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -348,6 +357,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/materiales-luces.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.h",
 			"sourceGroupIndex" : 1
 		},
 		{

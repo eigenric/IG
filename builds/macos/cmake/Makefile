@@ -574,6 +574,33 @@ Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/mate
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/release_exe.dir/build.make CMakeFiles/release_exe.dir/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/materiales-luces.cpp.s
 .PHONY : Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/materiales-luces.cpp.s
 
+Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.o: Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp.o
+.PHONY : Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.o
+
+# target to build an object file
+Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_exe.dir/build.make CMakeFiles/debug_exe.dir/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/release_exe.dir/build.make CMakeFiles/release_exe.dir/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp.o
+.PHONY : Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp.o
+
+Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.i: Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp.i
+.PHONY : Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.i
+
+# target to preprocess a source file
+Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_exe.dir/build.make CMakeFiles/debug_exe.dir/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/release_exe.dir/build.make CMakeFiles/release_exe.dir/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp.i
+.PHONY : Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp.i
+
+Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.s: Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp.s
+.PHONY : Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.s
+
+# target to generate assembly for a file
+Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_exe.dir/build.make CMakeFiles/debug_exe.dir/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/release_exe.dir/build.make CMakeFiles/release_exe.dir/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp.s
+.PHONY : Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.cpp.s
+
 Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/objeto3d.o: Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/objeto3d.cpp.o
 .PHONY : Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/objeto3d.o
 
@@ -713,6 +740,9 @@ help:
 	@echo "... Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/materiales-luces.o"
 	@echo "... Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/materiales-luces.i"
 	@echo "... Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/materiales-luces.s"
+	@echo "... Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.o"
+	@echo "... Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.i"
+	@echo "... Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/modelo-jer.s"
 	@echo "... Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/objeto3d.o"
 	@echo "... Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/objeto3d.i"
 	@echo "... Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/src/objeto3d.s"
