@@ -1,0 +1,69 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.1"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "pracs_ig_macos",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "debug_exe::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-debug_exe-Debug-947e64297b66cb69af27.json",
+					"name" : "debug_exe",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "release_exe::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-release_exe-Debug-5cbff1a368c68166c26b.json",
+					"name" : "release_exe",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos/build",
+		"source" : "/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/builds/macos"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}

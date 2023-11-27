@@ -1,0 +1,68 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.1"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "pracs_ig_linux_exe",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "debug_exe::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-debug_exe-Debug-20b5d6335fb31bcb1669.json",
+					"name" : "debug_exe",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "release_exe::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-release_exe-Debug-62949851217cade9e4cb.json",
+					"name" : "release_exe",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build",
+		"source" : "/home/debian/Desktop/ig-pracs-plantilla/builds/linux"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 1
+	}
+}

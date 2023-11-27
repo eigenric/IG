@@ -1,0 +1,4 @@
+/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/build/CMakeFiles/debug_exe.dir
+/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/build/CMakeFiles/release_exe.dir
+/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/build/CMakeFiles/edit_cache.dir
+/Users/eigenric/Library/CloudStorage/Dropbox/dgiim/IG/ig-pracs-plantilla/build/CMakeFiles/rebuild_cache.dir
