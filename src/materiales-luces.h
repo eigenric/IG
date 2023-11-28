@@ -182,7 +182,7 @@ class FuenteLuz
    // para fuentes diraccionales, incrementar o decrementar la longitud
    // (en las puntuales no hace nada)
    void actualizarLongi( const float incre );
-   // para fuentes diraccionales, incrementar o decrementar la longitud
+   // para fuentes diraccionales, incrementar o decrementar la longitu
    // (en las puntuales no hace nada)
    void actualizarLati( const float incre );
 

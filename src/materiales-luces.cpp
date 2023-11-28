@@ -61,6 +61,25 @@ void Textura::enviar()
    // y configurar parámetros de la textura (glTexParameter)
    // .......
 
+   // Generamos un nuevo nombre de textura único
+   glGenTextures(1, &ident_textura);
+
+   // Cambiamos la unidad de textura activa
+   glActiveTexture(GL_TEXTURE0);
+
+   // Activamos la textura generada en la unidad activa
+   glBindTexture(GL_TEXTURE_2D, ident_textura);
+
+   // Realizamos la copia de los texels
+   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, ancho, alto, 0, GL_RGB, GL_UNSIGNED_BYTE, imagen);
+
+   // Generamos mipmaps (para resolución reducida)
+   glGenerateMipmap(GL_TEXTURE_2D);
+
+   // Interpolación lineal entre los cuatro texels con centros más cercanos al centro del pixel
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, )
+
+
 }
 
 //----------------------------------------------------------------------

@@ -417,7 +417,10 @@ GrafoEstrellaX::GrafoEstrellaX(unsigned int n, float angulo_rotacion_inicial)
    pm_rotacion_estrella = leerPtrMatriz(ind_rot);
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 unsigned int GrafoEstrellaX::leerNumParametros() const
 {
    return num_parametros;
