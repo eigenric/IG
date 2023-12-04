@@ -104,6 +104,9 @@ void NodoGrafoEscena::visualizarGL(  )
    Cauce *          cauce           = apl->cauce ;           assert( cauce != nullptr );
    PilaMateriales * pila_materiales = apl->pila_materiales ; assert( pila_materiales != nullptr );
 
+   if (apl->iluminacion)
+      pila_materiales->push();
+
    // COMPLETAR: práctica 3: implementar la visualización del nodo
    //
    // Se deben de recorrer las entradas y llamar recursivamente de visualizarGL, pero 
@@ -142,6 +145,8 @@ void NodoGrafoEscena::visualizarGL(  )
             cauce->compMM( *(entradas[i].matriz) );
             break;
          case TipoEntNGE::material:
+            if (apl->iluminacion)   
+               pila_materiales.activar(entradas[i].material);
             break;
          case TipoEntNGE::noInicializado:
             break;
@@ -162,8 +167,8 @@ void NodoGrafoEscena::visualizarGL(  )
    //   3. al finalizar, hacer 'pop' de la pila de materiales (restaura el material activo al inicio)
 
    // ......
-
-
+   if (apl->iluminacion)
+      pila_materiales->pop();
 }
 
 // *****************************************************************************

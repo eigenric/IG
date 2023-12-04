@@ -76,9 +76,18 @@ void Textura::enviar()
    // Generamos mipmaps (para resolución reducida)
    glGenerateMipmap(GL_TEXTURE_2D);
 
-   // Interpolación lineal entre los cuatro texels con centros más cercanos al centro del pixel
-   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, )
+   // Hacer interpolación bilineal entre los cuatro texels con centros
+   // más cercanos al centro del pixel:
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
+   // Interpolación bilineal 
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+
+   // Repetir la textura en ambas coordenadas.
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+   enviada = true;
 
 }
 
@@ -106,9 +115,36 @@ void Textura::activar(  )
 
    // COMPLETAR: práctica 4: enviar la textura a la GPU (solo la primera vez) y activarla
    // .......
+   if (!enviada)
+      enviar();
+   
+   cauce->fijarEvalText(true, ident_textura);
+   cauce->fijarTipoGCT(modo_gen_ct, coefs_s, coefs_t);
 
 }
 // *********************************************************************
+TexturaXY::TexturaXY(const std::string& nom)
+: Textura(nom)
+{
+   modo_gen_ct = mgct_coords_objeto;
+
+   // coefs_s = {1.0, 0.0, 0.0, 0.0};  
+   // coefs_t = {0.0, 1.0, 0.0, 0.0}; 
+}
+
+TexturaXZ::TexturaXZ(const std::string& nom)
+: Textura(nom)
+{
+   modo_gen_ct = mgct_coords_objeto;
+
+   // coefs_s = {1.0, 0.0, 0.0, 0.0};  
+   // coefs_t = {0.0, 0.0, 1.0, 0.0}; 
+   coefs_t[1] = 0.0;
+   coefs_t[2] = 1.0;
+}
+
+// *********************************************************************
+
 // crea un material usando un color plano y los coeficientes de las componentes
 
 Material::Material( const float p_k_amb, const float p_k_dif,
@@ -165,6 +201,15 @@ void Material::activar( )
    // COMPLETAR: práctica 4: activar un material
    // .....
 
+   if (textura != nullptr)
+      textura->activar();
+   else
+      cauce->fijarEvalText(false);
+
+   // Producir error en caso de valor bajo en exponente de la componente pseudo-especular.
+   assert( exp_pse <= 1 );
+
+   cauce->fijarParamsMIL(k_amb, k_dif, k_pse, exp_pse);
 }
 //**********************************************************************
 

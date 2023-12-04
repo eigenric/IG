@@ -357,10 +357,7 @@ debug_exe_OBJECTS = \
 "CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/escena.cpp.o" \
 "CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/eventos-raton.cpp.o" \
 "CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/eventos-teclado.cpp.o" \
-<<<<<<< HEAD
 "CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/examen-ec-p123.cpp.o" \
-=======
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 "CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp.o" \
 "CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/main.cpp.o" \
 "CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-ind.cpp.o" \
@@ -385,10 +382,7 @@ debug_exe_EXTERNAL_OBJECTS =
 ../bin/debug_exe: CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/escena.cpp.o
 ../bin/debug_exe: CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/eventos-raton.cpp.o
 ../bin/debug_exe: CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/eventos-teclado.cpp.o
-<<<<<<< HEAD
 ../bin/debug_exe: CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/examen-ec-p123.cpp.o
-=======
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 ../bin/debug_exe: CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp.o
 ../bin/debug_exe: CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/main.cpp.o
 ../bin/debug_exe: CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-ind.cpp.o

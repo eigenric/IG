@@ -828,12 +828,9 @@ help:
 	@echo "... home/debian/Desktop/ig-pracs-plantilla/src/eventos-teclado.o"
 	@echo "... home/debian/Desktop/ig-pracs-plantilla/src/eventos-teclado.i"
 	@echo "... home/debian/Desktop/ig-pracs-plantilla/src/eventos-teclado.s"
-<<<<<<< HEAD
 	@echo "... home/debian/Desktop/ig-pracs-plantilla/src/examen-ec-p123.o"
 	@echo "... home/debian/Desktop/ig-pracs-plantilla/src/examen-ec-p123.i"
 	@echo "... home/debian/Desktop/ig-pracs-plantilla/src/examen-ec-p123.s"
-=======
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 	@echo "... home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.o"
 	@echo "... home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.i"
 	@echo "... home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.s"

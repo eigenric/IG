@@ -94,20 +94,12 @@ clean: CMakeFiles/debug_exe.dir/clean
 CMakeFiles/release_exe.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/release_exe.dir/build.make CMakeFiles/release_exe.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/release_exe.dir/build.make CMakeFiles/release_exe.dir/build
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44 "Built target release_exe"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42 "Built target release_exe"
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 .PHONY : CMakeFiles/release_exe.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/release_exe.dir/rule: cmake_check_build_system
-<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles 22
-=======
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles 21
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/release_exe.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles 0
 .PHONY : CMakeFiles/release_exe.dir/rule
@@ -129,11 +121,7 @@ CMakeFiles/release_exe.dir/clean:
 CMakeFiles/debug_exe.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_exe.dir/build.make CMakeFiles/debug_exe.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_exe.dir/build.make CMakeFiles/debug_exe.dir/build
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22 "Built target debug_exe"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 "Built target debug_exe"
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 .PHONY : CMakeFiles/debug_exe.dir/all
 
 # Build rule for subdir invocation for target.

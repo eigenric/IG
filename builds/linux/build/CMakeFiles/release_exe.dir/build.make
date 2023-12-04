@@ -154,7 +154,6 @@ CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/eventos-te
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/eventos-teclado.cpp.s"
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/debian/Desktop/ig-pracs-plantilla/src/eventos-teclado.cpp -o CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/eventos-teclado.cpp.s
 
-<<<<<<< HEAD
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/examen-ec-p123.cpp.o: CMakeFiles/release_exe.dir/flags.make
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/examen-ec-p123.cpp.o: /home/debian/Desktop/ig-pracs-plantilla/src/examen-ec-p123.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/examen-ec-p123.cpp.o"
@@ -171,11 +170,6 @@ CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/examen-ec-
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp.o: CMakeFiles/release_exe.dir/flags.make
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp.o: /home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp.o"
-=======
-CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp.o: CMakeFiles/release_exe.dir/flags.make
-CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp.o: /home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp.o"
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp.o -c /home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp.i: cmake_force
@@ -188,11 +182,7 @@ CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/grafo-esce
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/main.cpp.o: CMakeFiles/release_exe.dir/flags.make
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/main.cpp.o: /home/debian/Desktop/ig-pracs-plantilla/src/main.cpp
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/main.cpp.o"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/main.cpp.o"
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/main.cpp.o -c /home/debian/Desktop/ig-pracs-plantilla/src/main.cpp
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/main.cpp.i: cmake_force
@@ -205,11 +195,7 @@ CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/main.cpp.s
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-ind.cpp.o: CMakeFiles/release_exe.dir/flags.make
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-ind.cpp.o: /home/debian/Desktop/ig-pracs-plantilla/src/malla-ind.cpp
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-ind.cpp.o"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-ind.cpp.o"
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-ind.cpp.o -c /home/debian/Desktop/ig-pracs-plantilla/src/malla-ind.cpp
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-ind.cpp.i: cmake_force
@@ -222,11 +208,7 @@ CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-ind.
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-revol.cpp.o: CMakeFiles/release_exe.dir/flags.make
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-revol.cpp.o: /home/debian/Desktop/ig-pracs-plantilla/src/malla-revol.cpp
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-revol.cpp.o"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-revol.cpp.o"
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-revol.cpp.o -c /home/debian/Desktop/ig-pracs-plantilla/src/malla-revol.cpp
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-revol.cpp.i: cmake_force
@@ -239,11 +221,7 @@ CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-revo
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/materiales-luces.cpp.o: CMakeFiles/release_exe.dir/flags.make
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/materiales-luces.cpp.o: /home/debian/Desktop/ig-pracs-plantilla/src/materiales-luces.cpp
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/materiales-luces.cpp.o"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/materiales-luces.cpp.o"
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/materiales-luces.cpp.o -c /home/debian/Desktop/ig-pracs-plantilla/src/materiales-luces.cpp
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/materiales-luces.cpp.i: cmake_force
@@ -256,11 +234,7 @@ CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/materiales
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/modelo-jer.cpp.o: CMakeFiles/release_exe.dir/flags.make
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/modelo-jer.cpp.o: /home/debian/Desktop/ig-pracs-plantilla/src/modelo-jer.cpp
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/modelo-jer.cpp.o"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/modelo-jer.cpp.o"
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/modelo-jer.cpp.o -c /home/debian/Desktop/ig-pracs-plantilla/src/modelo-jer.cpp
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/modelo-jer.cpp.i: cmake_force
@@ -273,11 +247,7 @@ CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/modelo-jer
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/objeto3d.cpp.o: CMakeFiles/release_exe.dir/flags.make
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/objeto3d.cpp.o: /home/debian/Desktop/ig-pracs-plantilla/src/objeto3d.cpp
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/objeto3d.cpp.o"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/objeto3d.cpp.o"
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/objeto3d.cpp.o -c /home/debian/Desktop/ig-pracs-plantilla/src/objeto3d.cpp
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/objeto3d.cpp.i: cmake_force
@@ -290,11 +260,7 @@ CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/objeto3d.c
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/seleccion.cpp.o: CMakeFiles/release_exe.dir/flags.make
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/seleccion.cpp.o: /home/debian/Desktop/ig-pracs-plantilla/src/seleccion.cpp
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/seleccion.cpp.o"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/seleccion.cpp.o"
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/seleccion.cpp.o -c /home/debian/Desktop/ig-pracs-plantilla/src/seleccion.cpp
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/seleccion.cpp.i: cmake_force
@@ -307,11 +273,7 @@ CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/seleccion.
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/vaos-vbos.cpp.o: CMakeFiles/release_exe.dir/flags.make
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/vaos-vbos.cpp.o: /home/debian/Desktop/ig-pracs-plantilla/src/vaos-vbos.cpp
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/vaos-vbos.cpp.o"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/vaos-vbos.cpp.o"
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/vaos-vbos.cpp.o -c /home/debian/Desktop/ig-pracs-plantilla/src/vaos-vbos.cpp
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/vaos-vbos.cpp.i: cmake_force
@@ -324,11 +286,7 @@ CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/vaos-vbos.
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/cauce.cpp.o: CMakeFiles/release_exe.dir/flags.make
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/cauce.cpp.o: /home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/cauce.cpp
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/cauce.cpp.o"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/cauce.cpp.o"
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/cauce.cpp.o -c /home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/cauce.cpp
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/cauce.cpp.i: cmake_force
@@ -341,11 +299,7 @@ CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/fbo.cpp.o: CMakeFiles/release_exe.dir/flags.make
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/fbo.cpp.o: /home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/fbo.cpp
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/fbo.cpp.o"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/fbo.cpp.o"
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/fbo.cpp.o -c /home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/fbo.cpp
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/fbo.cpp.i: cmake_force
@@ -358,11 +312,7 @@ CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/ig-aux.cpp.o: CMakeFiles/release_exe.dir/flags.make
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/ig-aux.cpp.o: /home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/ig-aux.cpp
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/ig-aux.cpp.o"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/ig-aux.cpp.o"
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/ig-aux.cpp.o -c /home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/ig-aux.cpp
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/ig-aux.cpp.i: cmake_force
@@ -375,11 +325,7 @@ CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/lector-jpg.cpp.o: CMakeFiles/release_exe.dir/flags.make
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/lector-jpg.cpp.o: /home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/lector-jpg.cpp
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/lector-jpg.cpp.o"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/lector-jpg.cpp.o"
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/lector-jpg.cpp.o -c /home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/lector-jpg.cpp
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/lector-jpg.cpp.i: cmake_force
@@ -392,11 +338,7 @@ CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/lector-ply.cpp.o: CMakeFiles/release_exe.dir/flags.make
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/lector-ply.cpp.o: /home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/lector-ply.cpp
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/lector-ply.cpp.o"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/lector-ply.cpp.o"
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/lector-ply.cpp.o -c /home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/lector-ply.cpp
 
 CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/materiales/src-cpp/lector-ply.cpp.i: cmake_force
@@ -415,10 +357,7 @@ release_exe_OBJECTS = \
 "CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/escena.cpp.o" \
 "CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/eventos-raton.cpp.o" \
 "CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/eventos-teclado.cpp.o" \
-<<<<<<< HEAD
 "CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/examen-ec-p123.cpp.o" \
-=======
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 "CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp.o" \
 "CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/main.cpp.o" \
 "CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-ind.cpp.o" \
@@ -443,10 +382,7 @@ release_exe_EXTERNAL_OBJECTS =
 ../bin/release_exe: CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/escena.cpp.o
 ../bin/release_exe: CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/eventos-raton.cpp.o
 ../bin/release_exe: CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/eventos-teclado.cpp.o
-<<<<<<< HEAD
 ../bin/release_exe: CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/examen-ec-p123.cpp.o
-=======
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 ../bin/release_exe: CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp.o
 ../bin/release_exe: CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/main.cpp.o
 ../bin/release_exe: CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-ind.cpp.o
@@ -466,11 +402,7 @@ release_exe_EXTERNAL_OBJECTS =
 ../bin/release_exe: /usr/lib/aarch64-linux-gnu/libGLX.so
 ../bin/release_exe: /usr/lib/aarch64-linux-gnu/libOpenGL.so
 ../bin/release_exe: CMakeFiles/release_exe.dir/link.txt
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX executable ../bin/release_exe"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX executable ../bin/release_exe"
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/release_exe.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
