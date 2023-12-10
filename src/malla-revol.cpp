@@ -58,6 +58,49 @@ void MallaRevol::inicializar
    // perfil, según se describe en el guion de prácticas.
    //
    // ............................... 
+
+
+   vector<glm::vec3> aristas;
+   vector<float> distancias;
+
+   // Aristas
+   for (size_t i=0; i < perfil.size()-1; i++)
+   {
+      aristas.push_back(perfil[i+1]-perfil[i]);
+      distancias.push_back(glm::length(aristas[i]));
+   }
+
+   vector<glm::vec3> normales_aristas;
+   // Calculo de las normales de las aristas del perfil
+   for (size_t i=0; i < aristas.size(); i++)
+   {
+      glm::vec3 normal_arista = vec3(aristas[i].y, -aristas[i].x, 0);
+
+      if (glm::length(normal_arista) != 0.0)
+         normal_arista = glm::normalize(normal_arista);
+
+      normales_aristas.push_back(normal_arista);
+   }
+
+   // Cálculo de las normales de los vértices del perfil
+   vector<glm::vec3> normales_vertices;
+   glm::vec3 normal_vertice;
+
+   // n_0 = m_0
+   normales_vertices.push_back(normales_aristas[0]);
+   for (size_t i=1; i < perfil.size()-1; i++)
+   {
+      
+      normal_vertice = normales_aristas[i-1]+normales_aristas[i];
+
+      // Modulo 1
+      if (glm::length(normal_vertice) != 0.0)
+         normal_vertice = glm::normalize(normal_vertice);
+
+      normales_vertices.push_back(normal_vertice);
+   }
+   // n_{n-1} = m_{n-2}
+   normales_vertices.push_back(normales_aristas[perfil.size()-2]);
    
    for (size_t i=0; i < num_copias; i++)
    {
@@ -77,6 +120,19 @@ void MallaRevol::inicializar
          vec3 vert_rot(x_rot, y_rot, z_rot);
 
          vertices.push_back(vert_rot);
+
+         // Rotacion de la normal
+         float r_normal = normales_vertices[j].x;
+         float x_normal_rot = r_normal*cos(theta);
+         float y_normal_rot = normales_vertices[j].y;
+         float z_normal_rot = -r_normal*sin(theta);
+         vec3 normal_rot(x_normal_rot, y_normal_rot, z_normal_rot);
+
+         // Modulo 1
+         if (glm::length(normal_rot) != 0.0)
+            normal_rot = glm::normalize(normal_rot);
+         
+         nor_ver.push_back(normal_rot);
       }
    }
 
@@ -148,7 +204,7 @@ Cono::Cono
    for (int i=0; i < num_verts_perf; i++)
    {
       float k = float(i)/(num_verts_perf-1);
-      perfil.push_back(glm::vec3(k, 1-k, 0));
+      perfil.push_back(glm::vec3(1-k, k, 0));
    }
 
    inicializar(perfil, nperfiles);

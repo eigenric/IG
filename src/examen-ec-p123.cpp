@@ -55,6 +55,8 @@ P1MallaCubo::P1MallaCubo()
          {1,5,7}, {1,7,3}  // Z+ (+1)
       } ;
 
+    calcularNormales();
+
 }
 
 
@@ -86,6 +88,8 @@ P2Rejilla::P2Rejilla(unsigned int n, unsigned int m)
         }
       }
    }
+
+   calcularNormales();
 }
 
 P3Cuadrado::P3Cuadrado()
@@ -100,6 +104,8 @@ P3Cuadrado::P3Cuadrado()
     triangulos = {
         {0,1,3}, {0, 3, 2}
     };
+
+    calcularNormales();
 }
 
 P3Caja::P3Caja()
@@ -150,6 +156,7 @@ P3Caja::P3Caja()
     agregar(cara);
 
     pm_posicion_esfera = leerPtrMatriz(ind_posicion_esfera);
+
 
 }
 

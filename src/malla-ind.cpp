@@ -76,6 +76,26 @@ void MallaInd::calcularNormalesTriangulos()
    // COMPLETAR: Práctica 4: creación de la tabla de normales de triángulos
    // ....
 
+   for (size_t i=0; i < triangulos.size(); i++)
+   {
+      glm::uvec3 tri = triangulos[i];
+      unsigned int p = tri[0],
+                   q = tri[1],
+                   r = tri[2];
+
+      glm::vec3 a = vertices[q] - vertices[p];
+      glm::vec3 b = vertices[r] - vertices[p];
+      glm::vec3 m_c = glm::cross(a, b);
+      glm::vec3 n_c;
+
+      if (glm::length(m_c) != 0.0)
+         n_c = glm::normalize(m_c);
+      else
+         n_c = vec3(0, 0, 0);
+
+      nor_tri.push_back(n_c);
+   }
+
 }
 
 
@@ -89,7 +109,25 @@ void MallaInd::calcularNormales()
    // se debe invocar en primer lugar 'calcularNormalesTriangulos'
    // .......
 
+   calcularNormalesTriangulos();
 
+   nor_ver.resize(vertices.size(), glm::vec3(0, 0, 0));
+
+   for (size_t i=0; i < triangulos.size(); i++)
+   {
+      glm::uvec3 tri = triangulos[i];
+      unsigned int v1 = tri[0],
+                   v2 = tri[1],
+                   v3 = tri[2];
+                   
+      nor_ver[v1] += nor_tri[i];
+      nor_ver[v2] += nor_tri[i];
+      nor_ver[v3] += nor_tri[i];
+   }
+
+   for (size_t i=0; i < nor_ver.size(); i++)
+      if (glm::length(nor_ver[i]) != 0.0)
+         nor_ver[i] = glm::normalize(nor_ver[i]);
 }
 
 
@@ -255,7 +293,19 @@ void MallaInd::visualizarNormalesGL(  )
    //       tipo de primitiva 'GL_LINES'.
 
    //  ..........
+   if (dvao_normales == nullptr)
+   {
+      float a = 1.0f;
+      for (size_t i=0; i < vertices.size(); i++)
+      {
+         segmentos_normales.push_back(vertices[i]);
+         segmentos_normales.push_back(vertices[i]+a*nor_ver[i]);
+      }
+      dvao_normales = new DescrVAO( 1, new DescrVBOAtribs( ind_atrib_posiciones, segmentos_normales )); 
 
+   }
+
+   dvao_normales->draw(GL_LINES);
 }
 
 // -----------------------------------------------------------------------------
@@ -298,6 +348,7 @@ MallaPLY::MallaPLY( const std::string & nombre_arch )
 
    // COMPLETAR: práctica 4: invocar  a 'calcularNormales' para el cálculo de normales
    // .................
+   calcularNormales();
 
 }
 
@@ -332,6 +383,8 @@ Cubo::Cubo(const std::string& nombre)
          {1,5,7}, {1,7,3}  // Z+ (+1)
       } ;
 
+   calcularNormales();
+
 }
 
 // ****************************************************************************
@@ -361,6 +414,7 @@ CuboColores::CuboColores()
          {0,6,4}, {0,2,6}, // Z-
       };
 
+   calcularNormales();
 }
 
 
@@ -386,6 +440,7 @@ Tetraedro::Tetraedro(vec3 color)
       };
    
    ponerColor(color);
+   calcularNormales();
 
 }
 // -----------------------------------------------------------------------------------------------
@@ -422,6 +477,7 @@ EstrellaZ::EstrellaZ(unsigned int n)
    // Triangulo con el origen
    triangulos.push_back({0, 2*n, 1});
 
+   calcularNormales();
 
 }
 
@@ -456,6 +512,8 @@ EstrellaX::EstrellaX(unsigned int n)
 
    // Triangulo con el origen
    triangulos.push_back({0, 2*n, 1});
+
+   calcularNormales();
 }
 
 EstrellaY::EstrellaY(unsigned int n)
@@ -489,6 +547,8 @@ EstrellaY::EstrellaY(unsigned int n)
 
    // Triangulo con el origen
    triangulos.push_back({0, 2*n, 1});
+
+   calcularNormales();
 }
 
 // -----------------------------------------------------------------------------------------------
@@ -537,6 +597,8 @@ CasaX::CasaX()
          {7,6,8}, {2,3,9},
          {2,8,6}, {2,9,8}
       } ;
+
+   calcularNormales();
 }
 
 // -----------------------------------------------------------------------------------------------
@@ -551,6 +613,8 @@ MallaTriangulo::MallaTriangulo()
             { 0, sqrt(2), 0}
          };
    triangulos = {{0,1,2}};
+
+   calcularNormales();
 }
 
 
@@ -569,6 +633,8 @@ MallaCuadrado::MallaCuadrado()
          {
             {0,2,1}, {1,2,3}
          };
+      
+   calcularNormales();
 }
 
 MallaPiramideL::MallaPiramideL()
@@ -593,6 +659,8 @@ MallaPiramideL::MallaPiramideL()
             {3,6,2}, {2,6,5},
             {5,6,4}, {0,6,4}
          };
+   
+   calcularNormales();
 }
 
 PiramideEstrellaZ::PiramideEstrellaZ(unsigned int n)
@@ -616,6 +684,8 @@ PiramideEstrellaZ::PiramideEstrellaZ(unsigned int n)
    
    // Falta el triángulo final para completar ciclo.
    triangulos.push_back({2*n, 2*n+1, 1});
+
+   calcularNormales();
 }
 
 RejillaY::RejillaY(unsigned int n, unsigned int m)
@@ -640,6 +710,8 @@ RejillaY::RejillaY(unsigned int n, unsigned int m)
          triangulos.push_back({i*n+j+1, (i+1)*n+j, (i+1)*n+j+1});
       }
    }
+
+   calcularNormales();
 }
 
 MallaTorre::MallaTorre(unsigned int n)
@@ -670,4 +742,5 @@ MallaTorre::MallaTorre(unsigned int n)
       triangulos.push_back({4*i, 1+4*i, 5+4*i});
    }
 
+   calcularNormales();
 }

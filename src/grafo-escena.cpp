@@ -146,7 +146,7 @@ void NodoGrafoEscena::visualizarGL(  )
             break;
          case TipoEntNGE::material:
             if (apl->iluminacion)   
-               pila_materiales.activar(entradas[i].material);
+               pila_materiales->activar(entradas[i].material);
             break;
          case TipoEntNGE::noInicializado:
             break;
@@ -239,6 +239,26 @@ void NodoGrafoEscena::visualizarNormalesGL(  )
    // - ignorar las entradas de tipo material, y la gestión de materiales (se usa sin iluminación)
 
    // .......
+   cauce->pushMM();
+
+   
+   for (size_t i=0; i < entradas.size(); i++)
+   {
+      switch(entradas[i].tipo)
+      {
+         case TipoEntNGE::objeto:
+            entradas[i].objeto->visualizarNormalesGL();
+            break;
+         case TipoEntNGE::transformacion:
+            cauce->compMM( *(entradas[i].matriz) );
+            break;
+         case TipoEntNGE::noInicializado:
+            break;
+      }
+   }
+
+   cauce->popMM();
+
 
 }
 
@@ -422,10 +442,6 @@ GrafoEstrellaX::GrafoEstrellaX(unsigned int n, float angulo_rotacion_inicial)
    pm_rotacion_estrella = leerPtrMatriz(ind_rot);
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> f56ed5a97c3e3574172d9276804df33cab1487ab
 unsigned int GrafoEstrellaX::leerNumParametros() const
 {
    return num_parametros;
