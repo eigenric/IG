@@ -46,8 +46,8 @@ Textura::Textura( const std::string & nombreArchivoJPG )
    // El nombre del archivo debe ir sin el 'path', la función 'LeerArchivoJPG' lo 
    // busca en 'materiales/imgs' y si no está se busca en 'archivos-alumno'
    // .....
-   const char* nombreArchivo = nombreArchivo.c_str();
-   imagen = LeerArchivoJPEG(nombreArchivo);
+   const char* nombreArchivo = nombreArchivoJPG.c_str();
+   imagen = LeerArchivoJPEG(nombreArchivo, ancho, alto);
    
 }
 
@@ -207,7 +207,7 @@ void Material::activar( )
       cauce->fijarEvalText(false);
 
    // Producir error en caso de valor bajo en exponente de la componente pseudo-especular.
-   assert( exp_pse <= 1 );
+   assert( exp_pse > 1 );
 
    cauce->fijarParamsMIL(k_amb, k_dif, k_pse, exp_pse);
 }
@@ -275,20 +275,20 @@ void ColFuentesLuz::activar( )
    //   - usar el método 'fijarFuentesLuz' del cauce para activarlas
    // .....
 
-   std::vector<glm::vec3> color;
+   std::vector<glm::vec3> colores;
    std::vector<glm::vec4> pos_dir_wc;
 
-   for (int i=0; i < vpf.size(); i++)
+   for (size_t i=0; i < vpf.size(); i++)
    {
-      color.push_back(vpf[i].color);
-      glm::vec4 pos_vpf = vec4(cos(radians(vpf[i].lati)), 
-                               sin(radians(vpf[i].lati))*cos(radians(vpf[i].longi)),
-                               sin(radians(vpf[i].lati))*sin(radians(vpf[i].longi)),
+      colores.push_back(vpf.at(i)->color);
+      glm::vec4 pos_vpf = vec4(cos(radians(vpf.at(i)->lati)), 
+                               sin(radians(vpf.at(i)->lati))*cos(radians(vpf.at(i)->longi)),
+                               sin(radians(vpf.at(i)->lati))*sin(radians(vpf.at(i)->longi)),
                                0.0);
       pos_dir_wc.push_back(pos_vpf);
    }
 
-   cauce->fijarFuentesLuz(color, pos_dir_wc);
+   cauce->fijarFuentesLuz(colores, pos_dir_wc);
 
 }
 
