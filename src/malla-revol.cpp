@@ -61,13 +61,31 @@ void MallaRevol::inicializar
 
 
    vector<glm::vec3> aristas;
-   vector<float> distancias;
+   vector<float> d_i;
 
    // Aristas
    for (size_t i=0; i < perfil.size()-1; i++)
    {
       aristas.push_back(perfil[i+1]-perfil[i]);
-      distancias.push_back(glm::length(aristas[i]));
+      d_i.push_back(glm::length(aristas[i]));
+   }
+
+   float suma_distancias = 0.0;
+   for (size_t i=0; i < d_i.size(); i++)
+      suma_distancias += d_i[i];
+
+
+   vector<float> t_i;
+
+   // Calculo de las coordenadas de texturas
+   float suma_d_j;
+   for (size_t i=0; i < perfil.size(); i++)
+   {
+      suma_d_j = 0.0;
+      for (uint j=0; j < i; j++)
+         suma_d_j += d_i[j];
+      
+      t_i.push_back(suma_d_j / suma_distancias);
    }
 
    vector<glm::vec3> normales_aristas;
@@ -133,6 +151,13 @@ void MallaRevol::inicializar
             normal_rot = glm::normalize(normal_rot);
          
          nor_ver.push_back(normal_rot);
+
+         // Coordenadas de textura
+         float s = float(i) / (num_copias-1);
+         float t = 1 - t_i[j];
+         vec2 cc_tt_ver_actual(s,t);
+
+         cc_tt_ver.push_back(cc_tt_ver_actual);
       }
    }
 

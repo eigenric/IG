@@ -17,6 +17,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/debian/Desktop/ig-pracs-plantilla/src/eventos-teclado.cpp" "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/eventos-teclado.cpp.o"
   "/home/debian/Desktop/ig-pracs-plantilla/src/examen-ec-p123.cpp" "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/examen-ec-p123.cpp.o"
   "/home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp" "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp.o"
+  "/home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp" "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp.o"
   "/home/debian/Desktop/ig-pracs-plantilla/src/main.cpp" "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/main.cpp.o"
   "/home/debian/Desktop/ig-pracs-plantilla/src/malla-ind.cpp" "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-ind.cpp.o"
   "/home/debian/Desktop/ig-pracs-plantilla/src/malla-revol.cpp" "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build/CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-revol.cpp.o"

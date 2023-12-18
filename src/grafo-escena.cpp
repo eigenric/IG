@@ -252,6 +252,7 @@ void NodoGrafoEscena::visualizarNormalesGL(  )
          case TipoEntNGE::transformacion:
             cauce->compMM( *(entradas[i].matriz) );
             break;
+         case TipoEntNGE::material:
          case TipoEntNGE::noInicializado:
             break;
       }

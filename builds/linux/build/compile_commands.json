@@ -41,6 +41,11 @@
 },
 {
   "directory": "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build",
+  "command": "/usr/bin/aarch64-linux-gnu-g++  -I/home/debian/Desktop/ig-pracs-plantilla/builds/linux/../../src -I/home/debian/Desktop/ig-pracs-plantilla/builds/linux/../../materiales/src-cpp  -std=c++20 -Wall -Wextra -Wno-unused-parameter -Wno-unused-private-field -Wfatal-errors -g -O2 -o CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp.o -c /home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp",
+  "file": "/home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp"
+},
+{
+  "directory": "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build",
   "command": "/usr/bin/aarch64-linux-gnu-g++  -I/home/debian/Desktop/ig-pracs-plantilla/builds/linux/../../src -I/home/debian/Desktop/ig-pracs-plantilla/builds/linux/../../materiales/src-cpp  -std=c++20 -Wall -Wextra -Wno-unused-parameter -Wno-unused-private-field -Wfatal-errors -g -O2 -o CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/main.cpp.o -c /home/debian/Desktop/ig-pracs-plantilla/src/main.cpp",
   "file": "/home/debian/Desktop/ig-pracs-plantilla/src/main.cpp"
 },
@@ -143,6 +148,11 @@
   "directory": "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build",
   "command": "/usr/bin/aarch64-linux-gnu-g++  -I/home/debian/Desktop/ig-pracs-plantilla/builds/linux/../../src -I/home/debian/Desktop/ig-pracs-plantilla/builds/linux/../../materiales/src-cpp  -std=c++20 -Wall -Wextra -Wno-unused-parameter -Wno-unused-private-field -Wfatal-errors -g -g -o CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp.o -c /home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp",
   "file": "/home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp"
+},
+{
+  "directory": "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build",
+  "command": "/usr/bin/aarch64-linux-gnu-g++  -I/home/debian/Desktop/ig-pracs-plantilla/builds/linux/../../src -I/home/debian/Desktop/ig-pracs-plantilla/builds/linux/../../materiales/src-cpp  -std=c++20 -Wall -Wextra -Wno-unused-parameter -Wno-unused-private-field -Wfatal-errors -g -g -o CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp.o -c /home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp",
+  "file": "/home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp"
 },
 {
   "directory": "/home/debian/Desktop/ig-pracs-plantilla/builds/linux/build",

@@ -545,6 +545,36 @@ home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_exe.dir/build.make CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp.s
 .PHONY : home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp.s
 
+home/debian/Desktop/ig-pracs-plantilla/src/latapeones.o: home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp.o
+
+.PHONY : home/debian/Desktop/ig-pracs-plantilla/src/latapeones.o
+
+# target to build an object file
+home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/release_exe.dir/build.make CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_exe.dir/build.make CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp.o
+.PHONY : home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp.o
+
+home/debian/Desktop/ig-pracs-plantilla/src/latapeones.i: home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp.i
+
+.PHONY : home/debian/Desktop/ig-pracs-plantilla/src/latapeones.i
+
+# target to preprocess a source file
+home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/release_exe.dir/build.make CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_exe.dir/build.make CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp.i
+.PHONY : home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp.i
+
+home/debian/Desktop/ig-pracs-plantilla/src/latapeones.s: home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp.s
+
+.PHONY : home/debian/Desktop/ig-pracs-plantilla/src/latapeones.s
+
+# target to generate assembly for a file
+home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/release_exe.dir/build.make CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_exe.dir/build.make CMakeFiles/debug_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp.s
+.PHONY : home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp.s
+
 home/debian/Desktop/ig-pracs-plantilla/src/main.o: home/debian/Desktop/ig-pracs-plantilla/src/main.cpp.o
 
 .PHONY : home/debian/Desktop/ig-pracs-plantilla/src/main.o
@@ -834,6 +864,9 @@ help:
 	@echo "... home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.o"
 	@echo "... home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.i"
 	@echo "... home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.s"
+	@echo "... home/debian/Desktop/ig-pracs-plantilla/src/latapeones.o"
+	@echo "... home/debian/Desktop/ig-pracs-plantilla/src/latapeones.i"
+	@echo "... home/debian/Desktop/ig-pracs-plantilla/src/latapeones.s"
 	@echo "... home/debian/Desktop/ig-pracs-plantilla/src/main.o"
 	@echo "... home/debian/Desktop/ig-pracs-plantilla/src/main.i"
 	@echo "... home/debian/Desktop/ig-pracs-plantilla/src/main.s"

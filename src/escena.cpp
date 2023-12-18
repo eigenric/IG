@@ -46,6 +46,7 @@
 #include "escena.h"
 #include "modelo-jer.h"
 #include "examen-ec-p123.h"
+#include "latapeones.h"
 
 
 // -----------------------------------------------------------------------------------------------
@@ -419,6 +420,14 @@ Escena3::Escena3()
 // Añadir la implementación del constructor de la clase Escena4 para construir
 // los objetos que se indican en el guion de la práctica 4
 // .......
+
+Escena4::Escena4()
+{
+   using namespace std;
+   cout << "Creando objetos de la práctica 4." << endl;
+
+   objetos.push_back( new LataPeones() );
+}
 
 
 

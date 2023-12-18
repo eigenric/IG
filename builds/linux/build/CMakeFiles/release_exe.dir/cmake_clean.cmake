@@ -14,6 +14,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/eventos-teclado.cpp.o"
   "CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/examen-ec-p123.cpp.o"
   "CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/grafo-escena.cpp.o"
+  "CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/latapeones.cpp.o"
   "CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/main.cpp.o"
   "CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-ind.cpp.o"
   "CMakeFiles/release_exe.dir/home/debian/Desktop/ig-pracs-plantilla/src/malla-revol.cpp.o"
