@@ -561,3 +561,11 @@ void GrafoCubos::actualizarEstadoParametro(const unsigned iParam, const float t_
          break;
    }
 }
+
+// P4
+
+NodoCubo24::NodoCubo24()
+{
+   agregar(new Material(new Textura("window-icon.jpg"), 0.5, 0.5, 0.5, 5.0));
+   agregar(new Cubo24());
+}

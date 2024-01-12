@@ -16,14 +16,14 @@ Lata::Lata(const std::string& nombreArchivoJPG)
 
     Textura* textura_cuerpo = new Textura(nombreArchivoJPG);
     Material* material_cuerpo = new Material(textura_cuerpo, 0.5, 1.0, 1.0, 100.0);
-
     cuerpo->agregar(material_cuerpo);
+
     base->agregar(new MallaRevolPLY("lata-pinf.ply", 40));
     agregar(base);
-    tapa->agregar(new MallaRevolPLY("lata-psup.ply", 40));
-    agregar(tapa);
     cuerpo->agregar(new MallaRevolPLY("lata-pcue.ply", 40));
     agregar(cuerpo);
+    tapa->agregar(new MallaRevolPLY("lata-psup.ply", 40));
+    agregar(tapa);
 }
 
 LataPeones::LataPeones()
@@ -32,6 +32,24 @@ LataPeones::LataPeones()
     lata->agregar(new Lata("lata-coke.jpg"));
     agregar(lata);
 
-  // MallaRevolPLY* peon = new MallaRevolPLY("peon.ply", 17) ;
-  // agregar()
+    MallaRevolPLY* peon = new MallaRevolPLY("peon.ply", 17) ;
+    Textura* textura_madera = new Textura("text-madera.jpg");
+    Material* material_madera = new Material(textura_madera, 0.1, 1.0, 1.0, 100.0);
+
+    agregar(scale(vec3(0.25, 0.25, 0.25)));
+    agregar(translate(vec3(0, 1.5, 3.0)));
+
+    agregar(material_madera);
+    agregar(peon);
+
+    agregar(translate(vec3(2.25, 0, 0)));
+    Material* material_blanco = new Material(0.1, 1.0, 0.0, 100.0);
+    agregar(material_blanco);
+    agregar(peon);
+
+    agregar(translate(vec3(2.25, 0.0, 0.0)));
+    Material* material_negro = new Material(0.1, 0.1, 1.0, 100.0);
+    agregar(material_negro);
+    agregar(peon);
+
 }

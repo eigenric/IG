@@ -208,4 +208,10 @@ class MallaTorre: public MallaInd
       MallaTorre(unsigned int n);
 };
 
+class Cubo24: public MallaInd
+{
+   public:
+      Cubo24();
+};
+
 #endif

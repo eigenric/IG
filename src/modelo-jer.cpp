@@ -121,22 +121,26 @@ Cabeza::Cabeza()
 {
     agregar( scale(vec3(0.5, 0.5, 0.2)) );
     agregar( translate(vec3(0.0, 1.6, 0.0)) );
-    agregar( new Cubo() );
+
+    agregar(new Material(new Textura("azul-metalico.jpg"), 0.5, 0.5, 0.5, 5.0));
+    agregar( new Cubo24() );
     
     agregar( scale(vec3(1.2, 1.2, 1.2)) );
     agregar( translate(vec3(0.0, -0.25, 0.0)) );
-    agregar( new Pelo() );
+
+    agregar(new Material(new Textura("chip.jpg"), 1.0, 0.0, 1.0, 5.0));
+    agregar(new Pelo() );
 
     agregar( new Boca() );
     agregar( new Nariz() );
 
     agregar( translate(vec3(-0.4, 0.5, 0.85)) );
     agregar( scale(vec3(1.0, 1.0, 4.16)) );
+
     ojo_izq = agregar( new OjoPupila(0.1, 0.0) );
     agregar( translate(vec3(0.8, 0.0, 0.0)) );
     ojo_der = agregar( new OjoPupila(0.1, 0.0) );
 
-    ponerColor(vec3(0.6, 0.6, 1.0));
 }
 
 unsigned int Cabeza::leerNumParametros() const {
@@ -166,7 +170,6 @@ Pelo::Pelo()
     agregar( translate(vec3(0.0, -1.0, 0.75)) );
     agregar( new Rizos(50, 20) );
 
-    ponerColor({0, 0.6, 0.8});
 
 }
 
@@ -263,6 +266,8 @@ OjoPupila::OjoPupila(float radio_pupila, float pos_pupila_inicial)
     pos_pupila_inicial = pos_pupila_inicial;
     unsigned ind = agregar( translate(vec3(pos_pupila_inicial, 0.0, 0.05)) );
     
+    Material* material_blanco = new Material(0.1, 1.0, 0.0, 100.0);
+    agregar(material_blanco);
     agregar(new CircunferenciaZ(radio_pupila, {0,0,0}));
 
     pm_posicion_pupila = leerPtrMatriz(ind);
