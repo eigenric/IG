@@ -252,3 +252,27 @@ Esfera::Esfera
 
    inicializar(perfil, nperfiles);
 }
+
+Toro::Toro
+(
+   const int n_p,  // Poligono regular de n_p vértices
+   const float r_p,   // Radio del polígono regular
+   const float r_t,   // Centrado a distancia r_t 
+   const unsigned n_t // Numero de copias
+)
+{
+   assert(r_p > 0 && r_t > 0);
+   assert(n_p > 2 && n_t > 2);
+
+   ponerNombre( std::string("toro por revolución del perfil") );
+   std::vector<glm::vec3> perfil;
+
+   float angulo;
+   for (int i = 0; i <= n_p; i++)
+   {
+      angulo = 2.0f*M_PI * i/ n_p;
+      perfil.push_back({r_t+r_p*cosf(angulo),r_p*sinf(angulo), 0});
+   }  
+
+   inicializar(perfil, n_t);
+}

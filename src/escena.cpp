@@ -384,6 +384,8 @@ Escena2::Escena2()
    objetos.push_back( new Cilindro(10, 50) );
    objetos.push_back( new Cono(10, 50) );
    objetos.push_back( new Esfera(50, 50) );
+
+   objetos.push_back( new Toro(12, 0.5, 1, 20) );
    
 }
 
@@ -393,7 +395,7 @@ Escena2::Escena2()
 //
 // Añadir la implementación del constructor de la clase Escena3 para construir
 // los objetos que se indican en los guiones de las práctica 3
-// .......
+// ......
 
 Escena3::Escena3()
 {
@@ -421,6 +423,8 @@ Escena3::Escena3()
 // los objetos que se indican en el guion de la práctica 4
 // .......
 
+
+
 Escena4::Escena4()
 {
    using namespace std;
@@ -429,7 +433,6 @@ Escena4::Escena4()
    objetos.push_back( new LataPeones() );
    objetos.push_back( new NodoCubo24() );
 }
-
 
 
 // ----------------------------------------------------------------------

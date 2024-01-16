@@ -105,5 +105,17 @@ class Esfera: public MallaRevol
    ) ;
 };
 
+class Toro: public MallaRevol
+{
+   public:
+
+   Toro
+   (
+      const int n_p,
+      const float r_p,
+      const float r_t,
+      const unsigned n_t
+   );
+};
 
 #endif
