@@ -18,12 +18,22 @@ class Peon : public NodoGrafoEscena
 {
     public:
         Peon();
+        bool cuandoClick(const vec3& centro_wc) override;
+
+    protected:
+        mat4* pm_tras = nullptr;
 };
 
 class LataPeones : public NodoGrafoEscena
 {
     public:
         LataPeones();
+};
+
+class VariasLatasPeones : public NodoGrafoEscena
+{
+    public:
+        VariasLatasPeones();
 };
 
 #endif
