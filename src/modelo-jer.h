@@ -15,7 +15,7 @@ class Motherboard : public NodoGrafoEscena
 protected:
     float angulo_cabeza_inicial, angulo_cuello_inicial;
     unsigned int num_parametros = 3;
-    unsigned int cabeza;
+    unsigned int cabeza_i;
     mat4x4 *pm_rotacion_cuello = nullptr;
     mat4x4 *pm_rotacion_cabeza = nullptr;
 

@@ -45,6 +45,8 @@ LataPeones::LataPeones()
 {   
     NodoGrafoEscena* lata = new NodoGrafoEscena();
     lata->agregar(new Lata("lata-coke.jpg"));
+    lata->ponerNombre("Lata de Coca-Cola");
+    lata->ponerIdentificador(1);
     agregar(lata);
 
     NodoGrafoEscena* peon1 = new NodoGrafoEscena();
@@ -56,7 +58,7 @@ LataPeones::LataPeones()
     peon1->agregar(material_madera);
     Peon* peon_madera = new Peon();
     peon_madera->ponerNombre("Peon de madera");
-    peon_madera->ponerIdentificador(1);
+    peon_madera->ponerIdentificador(2);
 
     peon1->agregar(peon_madera);
     agregar(peon1);
@@ -69,7 +71,7 @@ LataPeones::LataPeones()
 
     Peon* peon_blanco = new Peon();
     peon_blanco->ponerNombre("Peon blanco");
-    peon_blanco->ponerIdentificador(2);
+    peon_blanco->ponerIdentificador(3);
 
     peon2->agregar(peon_blanco);
 
@@ -83,7 +85,7 @@ LataPeones::LataPeones()
 
     Peon* peon_negro = new Peon();
     peon_negro->ponerNombre("Peon negro");
-    peon_negro->ponerIdentificador(3);
+    peon_negro->ponerIdentificador(4);
     peon3->agregar(peon_negro);
 
     agregar(translate(vec3(0.5, 0.0, 0.0)));

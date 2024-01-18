@@ -145,10 +145,8 @@ bool AplicacionIG::seleccion( int x, int y )
    vec3 centro = vec3(0.0, 0.0, 0.0);
    glm::mat4 *iMat = new mat4(1.0f);
 
-   if (raiz->buscarObjeto(ident, *iMat, &target, centro)) {
-      cout << "Buscar Objeto devuelve true" << endl;
+   if (raiz->buscarObjeto(ident, *iMat, &target, centro))
       return target->cuandoClick(centro);
-   }
 
 
    // si el flujo de control llega aquí, es que no se encuentra ese identificador, devolver false:

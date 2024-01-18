@@ -413,7 +413,7 @@ Escena3::Escena3()
    cout << "Creando objetos de la práctica 3." << endl;
 
    // Ejercicio 3 Examen
-   objetos.push_back( new P3Caja() );
+   //objetos.push_back( new P3Caja() );
 
    objetos.push_back( new Motherboard(0.0, 0.0) );
 

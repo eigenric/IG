@@ -8,18 +8,27 @@ using namespace glm;
 
 Motherboard::Motherboard(float angulo_cuello_inicial, float angulo_cabeza_inicial)
 {
-    agregar(new BaseMotherboard() );
+    BaseMotherboard* base = new BaseMotherboard();
+    base->ponerNombre("Base Motherboard");
+    base->ponerIdentificador(-1);
+    agregar(base);
 
     angulo_cuello_inicial = angulo_cuello_inicial;
     angulo_cabeza_inicial = angulo_cabeza_inicial;
     
     unsigned int ind_rot_cuello = agregar(rotate(radians(angulo_cuello_inicial), vec3(1.0, 0.0, 0.0)));
-    agregar(new Cuello());
+    Cuello* cuello = new Cuello();
+    cuello->ponerNombre("Cuello Motherboard");
+    cuello->ponerIdentificador(1);
+    agregar(cuello);
 
     agregar(translate(vec3(0, 0.1, 0.0)));
     unsigned int ind_rot_cabeza = agregar(rotate(radians(angulo_cabeza_inicial), vec3(0.0, 1.0, 0.0)));
     
-    cabeza = agregar(new Cabeza() );
+    Cabeza* cabeza = new Cabeza();
+    cabeza->ponerNombre("Cabeza Motherboard");
+    cabeza->ponerIdentificador(2);
+    cabeza_i = agregar(cabeza);
 
     pm_rotacion_cuello = leerPtrMatriz(ind_rot_cuello);
     pm_rotacion_cabeza = leerPtrMatriz(ind_rot_cabeza);
@@ -70,7 +79,7 @@ void Motherboard::actualizarEstadoParametro(unsigned int iParam, const float t_s
         }
         // Para el movimiento de las pupilas delega en actualizarEstadoParametro de Cabeza
         case 2:
-            ((Cabeza*)(entradas[cabeza].objeto))->actualizarEstadoParametro(0, t_sec);
+            ((Cabeza*)(entradas[cabeza_i].objeto))->actualizarEstadoParametro(0, t_sec);
             break;
     }
 
@@ -126,26 +135,46 @@ Cabeza::Cabeza()
     // Material 1
     cuboMetalico->agregar(new Material(new Textura("azul-metalico.jpg"), 0.5, 0.5, 0.5, 5.0));
     cuboMetalico->agregar(new Cubo24() );
+    cuboMetalico->ponerNombre("Cubo Metalico cabeza");
+    cuboMetalico->ponerIdentificador(3);
 
     agregar(cuboMetalico);
     
     agregar( scale(vec3(1.2, 1.2, 1.2)) );
     agregar( translate(vec3(0.0, -0.25, 0.0)) );
 
-    agregar(new Pelo() );
+    Pelo* pelo = new Pelo();
+    pelo->ponerNombre("Pelo Cabeza");
+    pelo->ponerIdentificador(4);
+    agregar(pelo);
 
-    agregar( new Boca() );
+    Boca* boca = new Boca();
+    boca->ponerNombre("Boca Cabeza");
+    boca->ponerIdentificador(5);
+    agregar(boca);
 
     // Material 2 Difuso
     agregar(new Material(0.5, 1, 0.1, 100.0));
-    agregar( new Nariz() );
+    Nariz* nariz = new Nariz();
+    nariz->ponerNombre("Nariz cabeza");
+    nariz->ponerIdentificador(6);
+    agregar(nariz);
 
     agregar( translate(vec3(-0.4, 0.5, 0.85)) );
     agregar( scale(vec3(1.0, 1.0, 4.16)) );
 
-    ojo_izq = agregar( new OjoPupila(0.1, 0.0) );
+    OjoPupila* ojoIzquierdo = new OjoPupila(0.1, 0.0);
+    ojoIzquierdo->ponerNombre("Ojo izquierdo cabeza");
+    ojoIzquierdo->ponerIdentificador(7);
+
+    ojo_izq = agregar(ojoIzquierdo);
     agregar( translate(vec3(0.8, 0.0, 0.0)) );
-    ojo_der = agregar( new OjoPupila(0.1, 0.0) );
+
+    OjoPupila* ojoDerecho = new OjoPupila(0.1, 0.0);
+    ojoDerecho->ponerNombre("Ojo derecho cabeza");
+    ojoDerecho->ponerIdentificador(8);
+
+    ojo_der = agregar(ojoDerecho);
 
 }
 

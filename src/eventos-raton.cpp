@@ -90,10 +90,7 @@ void FGE_PulsarLevantarBotonRaton( GLFWwindow* window, int button, int action, i
    {
       // pulsar botón izquierdo: selección
       if ( apl->seleccion( x*apl->mouse_pos_factor, (apl->ventana_tam_y - y*apl->mouse_pos_factor) ) )
-      {
-         cout << "Usando apl seleccion " << endl;
          apl->revisualizar_escena = true ;
-      }
    }
    else if ( button == GLFW_MOUSE_BUTTON_RIGHT )
    {
