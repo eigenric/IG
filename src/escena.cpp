@@ -47,7 +47,7 @@
 #include "modelo-jer.h"
 #include "examen-ec-p123.h"
 #include "latapeones.h"
-
+#include "examen-ec-p45.h"
 
 // -----------------------------------------------------------------------------------------------
 
@@ -440,8 +440,9 @@ Escena4::Escena4()
    using namespace std;
    cout << "Creando objetos de la práctica 4." << endl;
 
-   objetos.push_back( new LataPeones() );
-   objetos.push_back( new NodoCubo24() );
+   objetos.push_back( new NodoP4() );
+   // objetos.push_back( new LataPeones() );
+   // objetos.push_back( new NodoCubo24() );
 }
 
 
@@ -458,5 +459,5 @@ Escena5::Escena5()
    cout << "Creando objetos de la práctica 5." << endl;
 
 
-   objetos.push_back( new VariasLatasPeones() );
+   //objetos.push_back( new VariasLatasPeones() );
 }
